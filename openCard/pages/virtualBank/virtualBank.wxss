@@ -1,0 +1,83 @@
+/* openCard/pages/virtualBank/virtualBank.wxss */
+.cmbcvtBox{
+    min-height: 417rpx;
+}
+.cmbcvtBox .virtualBox_top{
+    display: flex;
+    width: 100%;
+    margin-top: 43rpx;
+    margin-bottom: 33rpx;
+}
+.cmbcvtBox .cmbc_img_box{
+    margin-top: 23rpx;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cmbcvtBox .cmbclogo_icon{
+    width: 87rpx;
+    height: 68rpx;
+}
+.cmbcvtBox .blank{
+    width: 220rpx;
+    height: 47rpx;
+}
+.cmbcvtBox .blank_t_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 24rpx;
+    border-top-left-radius: 24rpx;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+}
+.cmbcvtBox .blank_img{
+    margin-left: 22rpx;
+    width: 31rpx;
+    height: 26rpx;
+}
+.cmbcvtBox .blank_text{
+    color: rgb(255,255,255);
+    font-size: 24rpx;
+    margin-right: 13rpx;
+    margin-left: 6rpx;
+}
+.cmbcvtBox .cmbc_center{
+    flex: 1;
+    width: 591rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.cmbcvtBox .cmbc_m_bot{
+    margin-bottom: 33rpx;
+}
+.cmbcvtBox .cmbc_c_top_o{
+    color: rgb(104,104,104);
+    font-size: 28rpx;
+}
+.cmbcvtBox .cmbc_c_top_t{
+    display: inline-block;
+    border-radius: 15rpx;
+    background-color: rgb(251,185,68);
+    color: #ffffff;
+    font-size: 18rpx;
+    padding: 0 12rpx;
+    height: 31rpx;
+    line-height: 31rpx;
+    margin-left: 10rpx;
+}
+.cmbcvtBox.cmbc_c_cen{
+    color: rgb(104,104,104);
+    font-size: 28rpx;
+}
+.cmbcvtBox .copy_icon{
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 15rpx;
+}
+.cmbcvtBox .just_btwn{
+    margin-top: 16rpx;
+    justify-content: space-between;
+}

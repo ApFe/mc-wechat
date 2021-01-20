@@ -1,0 +1,27 @@
+<!--pages/personal/settings.wxml-->
+<view class="personal">
+    <view class="comm_c_b">
+        <view class="comm_box">
+            <view class="comm_list_text tran_mboxtop">
+                <text class="trans_one_text setColor">默认头像</text>
+                <view class="trans_two_text settingImg">
+                    <open-data class="settingImg" type="userAvatarUrl"></open-data>
+                </view>
+            </view>
+            <view class="comm_list_text">
+                <text class="trans_one_text setColor">绑定手机</text>
+                <text class="trans_two_text">{{mobile}}</text>
+            </view>
+            <view class="comm_list_text" bindtap='checkAccounts'  wx:if="{{cmbcqualification}}">
+                <text class="trans_one_text setColor">电子账户</text>
+                <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+            </view>
+            <view class="comm_list_text" bindtap='applyforpermission'  wx:if="{{authorizeCmbcEcard}}">
+                <text class="trans_one_text setColor">白名单申请</text>
+                <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+            </view>
+            <view class="comm_box_bottom"></view>
+        </view>
+        <view class="comm_box_allbtn comm_msg_btnTrue" catchtap="logoff">退出登录</view>
+    </view>
+</view>

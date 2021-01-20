@@ -1,0 +1,135 @@
+/* pages/goodsDetail/goodsDetail.wxss */
+.gooddetail_box .swiper_detail{
+    width: 750rpx;
+    height: 620rpx;
+}
+.gooddetail_box .detail_img{
+    width: 100%;
+    height: 100%;
+}
+.gooddetail_box .detail_all_box{
+  height: 240rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gooddetail_box .detail_top_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 94rpx;
+}
+.gooddetail_box .detail_ing{
+  flex: 1;
+  font-size: 30rpx;
+  color: rgb(82, 109, 226);
+  margin-left: 42rpx;
+}
+.gooddetail_box .detail_add_cunt{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 116rpx;
+  margin-right: 42rpx;
+}
+.gooddetail_box .good_detailImg{
+  width: 29rpx;
+  height: 29rpx;
+}
+.gooddetail_box .num_cunt{
+  font-size: 28rpx;
+  color: rgb(104, 104, 104);
+  flex: 1;
+  text-align: center;
+}
+.gooddetail_box .detail_name_o{
+  width: 594rpx;
+  font-size: 28rpx;
+  line-height: 1;
+  color: rgb(104, 104, 104);
+}
+.gooddetail_box .detail_name_t{
+  width: 594rpx;
+  font-size: 24rpx;
+  line-height: 2;
+  margin-top: 10rpx;
+  color: rgb(112, 112, 112);
+}
+.gooddetail_box .detail_name_r{
+  width: 594rpx;
+  font-size: 18rpx;
+  line-height: 2.2;
+  color: rgb(177, 177, 177);
+}
+.gooddetail_box .detail_fw_box{
+  background-color: #fff;
+  width: 674rpx;
+  min-height: 90rpx;
+  border-radius: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.gooddetail_box .fw_name{
+  font-size: 24rpx;
+  color: rgb(177, 177, 177);
+}
+.gooddetail_box .fw_all_o{
+  font-size: 24rpx;
+  color: rgb(104, 104, 104);
+  margin-left: 22rpx;
+}
+.gooddetail_box .fw_box{
+  width: 594rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.gooddetail_box .img_text{
+  width: 614rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  margin-top: 26rpx;      
+  color: rgb(104, 104, 104);
+}
+.gooddetail_box .dt_img_box{
+  /* width: 614rpx; */
+  padding: 40rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gooddetail_box .over{
+  font-size: 18rpx;
+  color: rgb(177, 177, 177);
+  padding-bottom: 130rpx;
+}
+.gooddetail_box .kf_box{
+  margin: 0 74rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85rpx;
+}
+.gooddetail_box .kf_img{
+  width: 41rpx;
+  height: 39rpx;
+  margin-right: 0;
+}
+.gooddetail_box .kf_text{
+  font-size: 18rpx;
+  line-height: 1;
+  color: #f9ca00;
+}
+.gooddetail_box .btn_box_pay{
+  width: 524rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 35rpx;
+  background: linear-gradient(to top right,rgb(250,159,0) ,rgb(249,202,0));
+  font-size: 27rpx;
+  color: #ffffff;
+}

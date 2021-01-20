@@ -1,0 +1,137 @@
+<!--openCard/pages/openAcc/openAcccount.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height cmbc_box">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="comm_box_center_o_nb cmbc_center">
+                    <text class="comm_box_c_ttle_no_m">开户步骤</text>
+                    <image class="what_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/what_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o_nb cmbc_step">
+                    <image class="step_img" lazy-load="{{true}}" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/step_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o_nb cmbc_center_b">
+                    <text class="cmbc_setp_text">上传证件照</text>
+                    <text class="cmbc_setp_text">选择绑卡账户</text>
+                    <text class="cmbc_setp_text">设置密码</text>
+                    <text class="cmbc_setp_text">手机号验证</text>
+                    <text class="cmbc_setp_text">开户完成</text>
+                </view>
+            </view>
+            <view class="comm_box" style="min-height:91rpx;">
+                <view class="comm_box_center_o_nb cmbc_center">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">证件照片</text>
+                    <view class="camera_box">{{tOrF}}</view>
+                    <image class="camera_img" bindtap="gouploadIdcard"  src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/camera_icon.png"></image>
+                </view>
+            </view>
+            <view class="comm_box cmbc_redio">
+                <view class="comm_box_center_o_nb cmbc_center">
+                    <text class="comm_box_c_ttle_no_m">请绑定持卡人为本人的储蓄卡</text>
+                </view>
+                <view class="comm_box_center_o">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">持卡人</text>
+                    <input class="comm_box_c_ttle_two" type="text" bindinput="holderInput" placeholder="{{cardHolder?cardHolder:'请输入真实姓名'}}" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_center_o">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">卡号</text>
+                    <input class="comm_box_c_ttle_two" type="number" bindinput="bankcardInput" placeholder="{{bankcard?bankcard:'请输入银行卡号'}}" maxlength="19" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_center_o">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">身份证</text>
+                    <input class="comm_box_c_ttle_two" type="idcard" bindinput="identityInput" placeholder="{{identity?identity:'请输入身份证号码'}}" maxlength="18" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_center_o" bindtap="open">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">所在地区</text>
+                    <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="text"  placeholder="{{districtName?districtName:'请选择所在区域'}}"  placeholder-style="color:#B1B1B1;"  disabled="{{true}}" bindblur='getUserInfo3' value="{{province.name}}{{city.name}}{{county.name}}" bindfocus="open" ></input>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle" style="min-width:92rpx;">街道详细地址</text>
+                    <input class="comm_box_c_ttle_two" type="text" bindinput="address" placeholder="{{street?street:'请输入街道详细地址'}}" maxlength="32" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_center_o" bindtap="openocp">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">职业</text>
+                    <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="text"  placeholder="{{occupationName?occupationName:'请选择职业'}}"  placeholder-style="color:#B1B1B1;" disabled="{{true}}"   value="{{occupation.name}}{{occupationc.name}}"  bindfocus="openocp" ></input>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o" bindtap="selectoccup" wx:if="{{occupation==82}}">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle">职业备注 </text>
+                    <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="text"  placeholder="{{occupationRemark?occupationRemark:'请选择职业备注'}}"  placeholder-style="color:#B1B1B1;" disabled="{{true}}"   value="{{occupationRemark}}"></input>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o" wx:if="{{80-occupation>0&&occupation}}">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle" style="min-width:92rpx;">工作单位</text>
+                    <input class="comm_box_c_ttle_two" type="text" bindinput="workunit" placeholder="{{company?company:'请输入工作单位'}}" maxlength="32" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_center_o">
+                    <text style="color:#d7000f;">*</text>
+                    <text class="comm_box_c_ttle_no_m" style="min-width:92rpx;">手机号</text>
+                    <image class="what_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/what_icon.png"></image>
+                    <input class="comm_box_c_ttle_two" type="number" bindinput="mobileInput" placeholder="{{mobile?mobile:'请输入二类户开户预留手机号'}}" maxlength="11" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <checkbox-group class="radio-group margin_top50 margin_bottom10" bindchange="cmbcradioChange">
+                    <checkbox  class="agreement_tradio" checked="{{cmbcchecked}}" color="#fbb944">
+                        <view class="agreement_t">
+                            已阅读并同意<text class="agreement_text" catchtap="cmbcprotocol">《中国民生银行个人人民币银行结算账户管理协议》</text>
+                        </view>
+                        <view class="agreement_t">
+                            <text class="agreement_text"  catchtap="cmbcprotocol_cmbc">《账户信息即时通服务协议》</text>
+                        </view>
+                    </checkbox >
+                </checkbox-group>
+                <view class="comm_box_allbtn margin_top10 sub_box {{submit&&cmbcchecked?'comm_msg_btnTrue':'comm_msg_btnfal'}}" bindtap="goEncryptor">下一步</view>
+                <view class="comm_box_bottom"></view>
+
+            </view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+    <mp-actionSheet bindactiontap="btnClick" show="{{showActionsheet}}" actions="{{groups}}" title="{{chosTitle}}">
+    </mp-actionSheet>
+</view>
+<view wx:if="{{condition}}" class="citypicker" style='position:absolute;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);left:0px;top:0px;z-index:99'>
+  <picker-view indicator-style="height: 300rpx;" style="width: 100%; height: 400rpx;background:white;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="openfalse" class="city-cancel">取消</view>
+      <view bindtap="beTrueopen" class="city-true">确定</view>
+    </view>
+    <picker-view-column class='picker-one' style="text-align:center;">
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50rpx;padding-left:10rpx;">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column  class='picker-one' style="text-align:center;">
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50rpx;padding-left:10rpx;">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column  class='picker-one' style="text-align:center;">
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50rpx;padding-left:10rpx;">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+<view wx:if="{{occupationcondition}}" class="citypicker" style='position:absolute;width:100%;height:100%;background:rgba(0, 0, 0, 0.7);left:0px;top:0px;z-index:99'>
+  <picker-view indicator-style="height: 500rpx;" style="width: 100%; height: 600rpx;background:white;" value="{{ocpvalue}}" bindchange="bindChangeocc" class="citybody">
+    <view class="cityheader">
+      <view bindtap="ocpfalse" class="city-cancel">取消</view>
+      <view bindtap="beTrueocp" class="city-true">确定</view>
+    </view>
+    <picker-view-column class='picker-one' style="text-align:center;">
+      <view wx:for="{{occupations}}" wx:key="item" style="line-height: 80rpx;height:100rpx;font-size:26rpx;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column  class='picker-one' style="text-align:center;">
+      <view wx:for="{{occupationcs}}" wx:key="item" style="line-height: 80rpx;height:100rpx;font-size:26rpx;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+

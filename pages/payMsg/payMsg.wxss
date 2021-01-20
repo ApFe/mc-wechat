@@ -1,0 +1,65 @@
+/* pages/payMsg/payMsg.wxss */
+
+.pay_msg_box .pay_msg_l_box{
+    padding-top: 75rpx;
+    padding-bottom: 200rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.pay_msg_box .pay_msg_img{
+    width: 226rpx;
+    height: 233rpx;
+}
+.pay_msg_box .pay_msg_text{
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-top: 16rpx;
+}
+.pay_msg_box .pay_msg_text_tow{
+    font-size: 24rpx;
+    color: rgb(177, 177, 177);
+}
+.pay_msg_box .pay_msg_shop{
+    width: 249rpx;
+    height: 68rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 34rpx;
+    color: #ffffff;
+    font-size: 28rpx;
+    margin: 32rpx;
+    margin-top: 64rpx;
+}
+.pay_msg_shop_l{
+    background-color: rgb(221,221,221);
+}
+.pay_msg_shop_r{
+    background: linear-gradient(to top right,rgb(250,159,0) ,rgb(249,202,0));
+}
+.pay_msg_btn_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pg_msg{
+    width: 85%;
+    margin: 0 auto;
+}
+.pay_msg_box .ttle_one_w{
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 90rpx;
+    line-height: 90rpx;
+    display: block;
+}
+.pay_msg_box .ttle_little{   
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+    display: block;
+}

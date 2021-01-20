@@ -1,0 +1,28 @@
+/* pages/coffeeList/videoLifeList.wxss */
+.videoLife_box .video_two_box{
+    background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/video_bg_icon.png) no-repeat 0 -100rpx;
+    background-size: 100%;
+}
+.videoLife_box .life_two_box{
+    background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/life_bg_icon.png) no-repeat 0 -100rpx;
+    background-size: 100%;
+}
+.videoLife_box .talImg{
+    width: 300rpx;
+    height: 300rpx;
+}
+.coffee_title{
+    padding-top: 17rpx;
+    width: 96%;
+    height: 87rpx;
+    display: flex;
+    align-items: center;
+}
+.coffee_logo{
+    width: 80rpx;
+    height: 80rpx;
+}
+.coffee_title_text{
+    font-size: 32rpx;
+    color: rgb(32,40,115);
+}

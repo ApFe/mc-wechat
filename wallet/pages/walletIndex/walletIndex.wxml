@@ -1,0 +1,52 @@
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box remainingsumBox">
+                <view class="remainingsumBox_top">
+                    <view class="blank_sum"></view>
+                    <view class="cmbc_sum_img_box">
+                    </view>
+                    <view class="blank_sum blank_sum_t_box"  bindtap="cmbcAccountdetails">
+                        <text class="blank_sum_text">账户明细</text>
+                    </view>
+                </view>
+                <view class="cmbc_sum_center">
+                    
+                    <text class="cmbc_sum_c_cen">我的余额</text>
+                    <text class="cmbc_sum_c_cen_bottom">¥ {{cmbcCard.availableBalance>0?filter.numberToStr(cmbcCard.availableBalance/100,2):'0.00'}}</text>
+                    
+                </view>
+                <view class="comm_box_bottom"></view>
+                <view class="remainingsumBox_btm">
+                  <view class="comm_box_center_o just_btwn">
+                        <text class="comm_box_c_ttle_two">充值限额</text>
+                        <text class="cmbc_sum_c_cen">以银行限额为准</text>
+                    </view>
+                    <view class="comm_box_center_o just_btwn" style="border:none;">
+                        <text class="comm_box_c_ttle_two">提现限额</text>
+                        <text class="cmbc_sum_c_cen">50000/次</text>
+                    </view>
+                </view>
+                <view class="comm_box_bottom"></view>
+                <view class="remaining_sum_btn">
+                    <!-- <view class="res_btn r_btn_l" data-type='recharge' bindtap='rechargeOrwithdrawcashCmbc'>
+                        充值
+                    </view>
+                    <text class="kong_box"></text> -->
+                    <view class="res_btn r_btn_r"  data-type='withdrawcash' bindtap='rechargeOrwithdrawcashCmbc'>
+                      提现
+                    </view>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="comm_box_bottom"></view>
+            <view class="comm_box_bottom"></view>
+            <view class="comm_box_bottom"></view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+</view>

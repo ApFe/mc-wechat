@@ -1,0 +1,76 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/11/16 下午4:07:47 
+使用方法：
+在 /Users/lytcitic/Desktop/wechat-mall/pages/recharge/rechargeTal.wxml 引入模板
+
+```
+<import src="rechargeTal.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/lytcitic/Desktop/wechat-mall/pages/recharge/rechargeTal.wxss 中引入样式
+```
+@import "./rechargeTal.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="comm_box_height rec_tal_box">
+      <view class="comm_box_height rec_tal_box_two sk-image">
+        <view class="comm_c_b">
+          <image class="talImg sk-image" lazy-load="true" mode="aspectFit"></image>
+          <view class="comm_box">
+            <view class="tal_box">
+              <view class="rec_tal_iphone sk-image" maxlength="11" placeholder="请输入手机号码" placeholder-style="color:#B1B1B1;" type="number" value="18301088561"></view>
+              <text class="rec_tal_del sk-transparent sk-text-18-7500-771 sk-text" style="background-position-x: 50%;">X</text>
+            </view>
+            <view class="rec_tal_change_box">
+              <text class="ttle_one sk-transparent sk-text-33-7209-887 sk-text" style="border: none;">请选择兑换面额</text>
+              <view class="change_box">
+                <view class="only_one" data-code="30fb8c6f65ec" data-denomination="10" data-index="0" data-point="1100" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-719 sk-text">10元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-914 sk-text">积分价：1100</text>
+                </view>
+                <view class="only_one" data-code="2c7745215349" data-denomination="20" data-index="1" data-point="2200" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-155 sk-text">20元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-260 sk-text">积分价：2200</text>
+                </view>
+                <view class="only_one" data-code="d7efda51acc7" data-denomination="30" data-index="2" data-point="3200" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-425 sk-text">30元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-47 sk-text">积分价：3200</text>
+                </view>
+                <view class="only_one" data-code="0a0d97a0cc1b" data-denomination="50" data-index="3" data-point="5300" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-149 sk-text">50元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-429 sk-text">积分价：5300</text>
+                </view>
+                <view class="only_one" data-code="bcaf53275f25" data-denomination="100" data-index="4" data-point="10600" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-804 sk-text">100元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-467 sk-text">积分价：10600</text>
+                </view>
+                <view class="only_one" data-code="f7bf4d00e056" data-denomination="200" data-index="5" data-point="21200" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-534 sk-text">200元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-139 sk-text">积分价：21200</text>
+                </view>
+                <view class="only_one" data-code="de4869898264" data-denomination="300" data-index="6" data-point="31600" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-410 sk-text">300元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-318 sk-text">积分价：31600</text>
+                </view>
+                <view class="only_one sold_color" data-code="58b64e724e7c" data-denomination="500" data-index="7" data-point="52600" data-sold="true" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-386 sk-text">500元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-380 sk-text">积分价：52600</text>
+                </view>
+              </view>
+              <text class="ttle_one_w sk-transparent sk-text-36-2745-396 sk-text">温馨提示</text>
+              <text class="ttle_little sk-transparent sk-text-25-0000-18 sk-text">1. 请您务必确认兑换前的欠费情况，如兑换金额不足以交纳欠费，可能导致您兑换后仍处于欠费停机的状态，造成不必要的误解。</text>
+              <text class="ttle_little sk-transparent sk-text-25-0000-927 sk-text">2. 手机非实名制号码无法成功兑换。</text>
+              <text class="ttle_little sk-transparent sk-text-25-0000-494 sk-text">3. 手机携号转网状态无法成功兑换。</text>
+              <text class="ttle_little sk-transparent sk-text-25-0000-955 sk-text">4. 不支持副卡用户在线兑换；不支持虚拟运营商号码兑换。</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

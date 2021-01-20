@@ -1,0 +1,22 @@
+<!--pages/coffeeList/videoLifeList.wxml-->
+<view class="comm_box_height videoLife_box">
+    <view class="comm_box_height {{urlId==2?'video_two_box':'life_two_box'}}">
+        <view class="comm_c_b">
+            <image class="talImg" lazy-load="{{true}}" mode="aspectFit" src="{{urlId==2?'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/video_icon.png':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/life_icon.png'}}"></image>
+            <view class="goodlist_comm_box box_show" wx:for="{{listproductsArr}}" wx:key="index" data-code="{{item.code}}" data-sold="{{item.sold}}" bindtap="goGoodsDetail">
+                <image class="good_listImg" lazy-load="{{true}}" mode="aspectFit" src="{{item.product.icon}}"></image>
+                <view class="g_l_text_box">
+                    <view class="gl_text_all">
+                        <text class="g_l_text_one">{{item.product.title}}</text>
+                        <text class="g_l_text_two">{{item.product.subtitle}}</text>
+                    </view>
+                    <view class="g_l_text_btn_box">
+                        <text class="g_l_intger">{{item.point}}积分</text>
+                        <text class="g_l_btn {{item.sold?'clos_btn':'ture_btn'}}">{{item.sold?'已售罄':'立即兑换'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="overCommon">--------------------------------已经到底了--------------------------------</view>
+         </view>
+    </view>
+</view>

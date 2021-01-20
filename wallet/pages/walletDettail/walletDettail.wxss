@@ -1,0 +1,68 @@
+/* wallet/pages/walletDettail/walletDettail.wxss */
+.cmbcacc_listbox{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 592rpx;
+  height: 135rpx;
+  border-bottom: 2rpx dashed rgb(216, 216, 216);
+  color: rgb(177, 177, 177);
+  box-sizing: border-box;
+  margin: 0 auto;
+  
+}
+.cmbc_accList_box .acc_list_l{
+  font-size: 30rpx;
+  color: rgb(104, 104, 104);
+}
+.cmbc_accList_box .acc_list_r{
+  font-size: 24rpx;
+}
+.cmbc_accList_box .redcolor{
+  color: #FF0000;
+}
+.cmbc_accList_box .greencolor{
+  color: #00FF00;
+}
+.cmbc_accList_box .acc_list_l,.acc_list_r{
+  width: 100%;
+  line-height: 1.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cmbc_accList_box .acc_list_change{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 592rpx;
+  height: 88rpx;
+  border-bottom: 2rpx dashed rgb(216, 216, 216);
+  color: #fbb944;
+  font-size: 30rpx;
+  box-sizing: border-box;
+}
+.cmbc_accList_box .acc_list_change .down_img{
+  width: 34rpx;
+  height: 21rpx;
+  margin-left: 21rpx;
+}
+.cmbc_accList_box .no_accList_box{
+  padding-top: 200rpx;
+  padding-bottom: 480rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
+.cmbc_accList_box .no_accList_img{
+  width: 212rpx;
+  height: 151rpx;
+}
+.cmbc_accList_box .no_accList_text{
+  font-size: 28rpx;
+  color: rgb(104, 104, 104);
+  height: 161rpx;
+  line-height: 161rpx;
+}

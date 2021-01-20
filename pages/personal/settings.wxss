@@ -1,0 +1,10 @@
+/* pages/personal/settings.wxss */
+.settingImg{
+    width: 73rpx;
+    height: 73rpx;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.setColor{
+   color:rgb(251,185,68) 
+}

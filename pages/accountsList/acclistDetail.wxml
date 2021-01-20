@@ -1,0 +1,41 @@
+<!--pages/accountsList/acclist.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="accDetail_box comm_box_height">
+    <view class="comm_two_centerBox comm_box_height">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="acc_detail_change">
+                    <text class="change_text">{{acclistdetailArr.tradeType}}</text>
+                    <text class="change_text_t">{{acclistdetailArr.direction=='OUT'?'-':'+'}}{{acclistdetailArr.amount}}</text>
+                </view>
+                <view class="acc_listbox">
+                    <view class="acc_detail_r">
+                        <text class="l_a_two_l">类型</text>
+                        <text class="l_a_two_r">{{acclistdetailArr.tradeType}}</text>
+                    </view>
+                    <view class="acc_detail_r">
+                        <text class="l_a_two_l">时间</text>
+                        <text class="l_a_two_r">{{acclistdetailArr.paidAt}}</text>
+                    </view>
+                    <view class="acc_detail_r">
+                        <text class="l_a_two_l">流水号</text>
+                        <text class="l_a_two_r">{{acclistdetailArr.transactionNo}}</text>
+                    </view>
+                    <view class="acc_detail_r">
+                        <text class="l_a_two_l">账户</text>
+                        <text class="l_a_two_r">{{filter.cardsType(acclistdetailArr.card.type)}}({{filter.numberToFixed('12',acclistdetailArr.card.type,{nameCardNo:acclistdetailArr.card.nameCardNo,loginName:acclistdetailArr.card.loginName,mobile:acclistdetailArr.card.mobile})}})</text>
+                    </view>
+                    <view class="acc_detail_r" wx:if="{{acclistdetailArr.balance>0}}">
+                        <text class="l_a_two_l">余额</text>
+                        <text class="l_a_two_r">{{acclistdetailArr.balance}}</text>
+                    </view>
+                    <view class="acc_detail_r" wx:if="{{acclistdetailArr.cardSecret}}">
+                        <text class="l_a_two_l">充值券码</text>
+                        <text class="l_a_two_r">{{acclistdetailArr.cardSecret}}</text>
+                    </view>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+    </view>        
+</view>

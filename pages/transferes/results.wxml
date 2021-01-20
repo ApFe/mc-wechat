@@ -1,0 +1,77 @@
+<!-- pages/transferes/results.wxml -->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="tran_res comm_box_height">
+    <view class="comm_three_centerBox {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+        <view class="common_top_fix {{windowIsBang?'common_fixedbcn90':'common_fixebcnd45'}}">
+            {{status?'转赠结果':'充值结果'}}
+        </view>
+        <view class="comm_c_b nav_padding_top90">
+            <view class="comm_box" wx:if="{{status}}">
+                <image class="gold_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/icon_accounts_success@3x.png"></image>
+                <view class="res_ttle">
+                    <text class="res_ttle_o">{{status=='SUCCESS'?'转赠成功':'转赠失败'}}</text>
+                    <text class="res_ttle_t" wx:if="{{status!='SUCCESS'}}">{{rolloutnam}}</text>
+                </view>
+                <view class="seeAcc">
+                    <view class="res_btn" bindtap="goMine">查看账户</view>
+                    <text class="kong_box"></text>
+                    <view class="res_btn r_btn_r" bindtap="goTransfer">继续转赠</view>
+                </view>
+            </view>
+            <view class="comm_box" wx:else>
+                <image class="gold_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/icon_accounts_success@3x.png"></image>
+                <view class="res_ttle">
+                    <text class="res_ttle_o">{{bonuspoints.rechargeStatus?'充值成功':'充值失败'}}</text>
+                    <!-- <text class="res_ttle_t" wx:if="{{status!='SUCCESS'}}">{{rolloutnam}}</text> -->
+                </view>
+                <view class="seeAcc">
+                    <view class="res_btn" bindtap="goMine">查看账户</view>
+                    <text class="kong_box"></text>
+                    <view class="res_btn r_btn_r" bindtap="goirechage">继续充值</view>
+                </view>
+            </view>
+        </view>
+        <view class="comm_c_b" wx:if="{{status=='SUCCESS'||bonuspoints.active=='0'}}">
+            <view class="comm_box">
+                <view class="comm_list_text tran_mboxtop">
+                    <text class="trans_one_text">{{status=='SUCCESS'?'转入账户':'充值账户'}}</text>
+                    <text class="trans_two_text">{{status=='SUCCESS'?filter.cardsType(rollinaccType):bonuspoints.mobile}}</text>
+                </view>
+                <view class="comm_list_text" wx:if="{{status=='SUCCESS'}}">
+                    <text class="trans_one_text">{{filter.cardsttle(rollinaccType)}}</text>
+                    <text class="trans_two_text">{{filter.numberToFixed(rollinaccKey,12)}}</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="trans_one_text">{{status=='SUCCESS'?'转赠积分':'充值积分'}}</text>
+                    <text class="trans_two_text">{{status=='SUCCESS'?rolloutIntegral:bonuspoints.faceValue}}</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="trans_one_text">{{status=='SUCCESS'?'转出账户':'充值券码'}}</text>
+                    <text class="trans_two_text">{{status=='SUCCESS'?rolloutnam:bonuspoints.rechargecode}}</text>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+        <view class="comm_c_b" wx:if="{{bonuspoints.active=='1'}}">
+            <view class="comm_box">
+                <view class="comm_list_text tran_mboxtop">
+                    <text class="trans_one_text">账户类型</text>
+                    <text class="trans_two_text">{{bonuspoints.rollinnam}}</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="trans_one_text">{{bonuspoints.rollinaccType=='SIMPLE'?'手机号':'联名卡号'}}</text>
+                    <text class="trans_two_text">{{bonuspoints.rollinaccKey}}</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="trans_one_text">充值积分</text>
+                    <text class="trans_two_text">{{bonuspoints.faceValue}}</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="trans_one_text">充值券码</text>
+                    <text class="trans_two_text">{{bonuspoints.rechargecode}}</text>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+    </view>
+</view>

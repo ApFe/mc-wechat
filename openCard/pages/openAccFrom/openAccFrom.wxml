@@ -1,0 +1,72 @@
+<!--openCard/pages/openAccFrom/openAccFrom.wxml-->
+<!-- 实名注册 -->
+<view id="privacy" class="mui-page nomeno">
+  <view class="comm_two_centerBox">
+    <view class="mui-page-content comm_c_b" >
+      <view id="xxx">
+        
+ 
+          <view class="bodyboxshiy">
+ 
+            <view class="id_card_up">
+                <view class="imgboxsy box_show" id="1">
+                  <view class="shenfenzbyn " style="width: auto;" bindtap="choose" data-index="0">
+ 
+                    <image mode="aspectFit" src="{{tupianurl1}}" class="id_cardImg"></image>
+ 
+                    <!--  canvas 标签定位有问题（自定义的定位改变不了） 在手机上会出现绝对定位  隐藏canvas 就不能绘制图片   <view style="position:fixed;top:999999999999999999999rpx;"> 就能解决这问题   -->
+                    <view style="position:fixed;top:999999999999999999999rpx;">
+                      <canvas style='left: 10000rpx' id='scannerCanvas' canvas-id='scannerCanvas' disable-scroll="true" style="height:{{height}}px;width:{{width}}px;" />
+                    </view>
+ 
+ 
+                  </view>
+                </view>
+                <text class="id_text">上传身份证正面</text>
+                <view class="imgboxsy box_show" id="2">
+                  <view class="shenfenzbyn " style="height: 100%;width: auto;"bindtap="choose" data-index="1">
+                    <image mode="aspectFit" src="{{tupianurl2}}" class="id_cardImg"></image>
+                  </view>
+                </view>
+                <text class="id_text">上传身份证反面</text>
+                <!-- <view class="imgboxsy " id="3">
+                  <view class="shenfenzbyn " style="height: 100%;width: auto;auto;"bindtap="chooseImg" data-index="2">
+                    <image src="{{tupianurl3}}" style='width:300px;	height:210px;'></image>
+                  </view>
+                </view>
+ 
+                <view class="imgboxsy " id="4">
+                  <view class="shenfenzbyn " style="height: 100%;width: auto;auto;"bindtap="chooseImg" data-index="3">
+                    <image src="{{tupianurl4}}" style='width:300px;	height:210px;'></image>
+                  </view>
+                </view> -->
+              <view class="bor_dashed_top mar_top52">
+                <text class="comm_box_c_ttle">拍照示例</text>
+                <!-- <text class="no_idCard">证件不在身边？</text> -->
+              </view>
+              <view class="comm_box_center_o_nb cmbc_up_lest">
+                  <image class="up_list_step_img" lazy-load="{{true}}" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/photo_sample.png"></image>
+              </view>
+              <view class="up_list_img_box">
+                    <text class="cmbc_upsetp_text">标准</text>
+                    <text class="cmbc_upsetp_text">边框缺失</text>
+                    <text class="cmbc_upsetp_text">照片模糊</text>
+                    <text class="cmbc_upsetp_text">闪光强烈</text>
+                </view>
+            </view>
+          </view>
+          
+        <view class="comm_box_allbtn sub_box {{message?'comm_msg_btnTrue':'comm_msg_btnfal'}}" onclick="window.kos.reg_refers()" bindtap='goEncryptor'>确认提交</view>
+        <view class="comm_box_bottom">
+          <!--  -->
+        </view>
+      </view>
+      <view class="kf_box" bindtap="contactSupport">
+          <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+          <text class="kf_text">联系客服</text>
+      </view>
+    </view>
+  </view>
+</view>
+ 
+<!-- 实名注册 -->

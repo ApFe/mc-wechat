@@ -1,0 +1,59 @@
+<!--pages/recharge/rechargeTal.wxml-->
+<view class="comm_box_height rec_tal_box">
+    <view class="comm_box_height rec_tal_box_two">
+        <view class="comm_c_b">
+            <image class="talImg" lazy-load="{{true}}" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/talicon.png"></image>
+            <view class="comm_box">
+                <view class="tal_box">
+                    <input class="rec_tal_iphone" type="number" maxlength="11" bindinput="rechargeInput" placeholder="请输入手机号码" value="{{rechargeInput}}" placeholder-style="color:#B1B1B1;" />
+                    <text class="rec_tal_del" bindtap="delrechargeInput">X</text>
+                </view>
+                <view class="rec_tal_change_box">
+                    <text class="ttle_one">请选择兑换面额</text>
+                    <view class="change_box">
+                        <view class="only_one {{changeArr.sold?'sold_color':chose_Id==index?'chose_only':''}}"   bindtap="chooseClick" wx:for="{{changeArr}}"  wx:for-item="changeArr" wx:key="index" data-index="{{index}}"  data-denomination="{{changeArr.denomination}}"  data-point="{{changeArr.point}}" data-code="{{changeArr.code}}" data-sold="{{changeArr.sold}}">
+                            <text>{{changeArr.denomination}}元</text>
+                            <text class="only_price">积分价：{{changeArr.point}}</text>
+                        </view>
+                    </view>
+                    <text class="ttle_one_w">温馨提示</text>
+                    <text class="ttle_little">1. 请您务必确认兑换前的欠费情况，如兑换金额不足以交纳欠费，可能导致您兑换后仍处于欠费停机的状态，造成不必要的误解。</text>
+                    <text class="ttle_little">2. 手机非实名制号码无法成功兑换。</text>
+                    <text class="ttle_little">3. 手机携号转网状态无法成功兑换。</text>
+                    <text class="ttle_little">4. 不支持副卡用户在线兑换；不支持虚拟运营商号码兑换。</text>
+                    <text class="ttle_little">5. 不支持联通智能网号码1-10元兑换。</text>
+                    <text class="ttle_little">6. 到账时间：话费在月初月尾高峰期或恰逢促销活动时会有些许延迟。</text>
+                    <text class="ttle_little">7. 晚22点至次日早9点，如遇兑换失败，可能由于您号码所在地区运营商进行地区维护所致，请于9点后再进行兑换。</text>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{showreRollBox}}">
+        <view class="al_m_box">
+            <view class="al_beTur_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">兑换信息</text>
+                <image catchtap="closrechclose"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <view class="al_c_b_btn">
+                <text class="c_left_s">支付积分</text>
+                <text class="c_right_s">{{showArr.point}}</text>
+            </view>
+            <view class="border_dashed mar_btom"></view>
+            <view class="al_m_b_btn re_btn">
+                <text class="left_s">手机号</text>
+                <text class="right_s">{{showArr.rechargeInput}}</text>
+            </view>
+            <view class="al_m_b_btn re_btn">
+                <text class="left_s">面额</text>
+                <text class="right_s">{{showArr.name}}</text>
+            </view>
+            <view class="comm_msg_btn comm_msg_btnTrue" catchtap="rechbeTrue">确定</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,56 @@
+<!--pages/coffeeList/coffeeList.wxml-->
+<view class="comm_box_height coffee_box">
+    <view class="comm_box_height coffee_box_two">
+        <view class="comm_c_b">
+            <image class="talImg" lazy-load="{{true}}" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/coffee_img01_icon.png"></image>
+            <view class="comm_box">
+                <view class="coffee_title">
+                    <image class="coffee_logo" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/luck_coffee_logo.png"></image>
+                    <text class="coffee_title_text">瑞幸咖啡</text>
+                </view>
+                <view class="coffee_coupon_list {{couponItems.sold?'pos_sell':''}}" wx:for="{{coffeeCouponList}}"  wx:for-item="couponItems" wx:key="index">
+                    <view class="coffee_p_t">
+                        <text class="coupon_rmb">¥</text><text class="coupon_price">{{couponItems.denomination}}</text>全场饮品券
+                    </view>
+                    <view class="coffee_piont" data-index="{{index}}" bindtap="goPaycoofee">
+                        <view class="jf_point">
+                            {{couponItems.point}}<text class="jf">积分</text>
+                        </view>
+                        <view class="go_coffee">立即兑换</view>
+                    </view>
+                    <view class="pos_fixed" wx:if="{{couponItems.sold}}">
+                        <image class="pos_fixed_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/coffee_sold03.png"></image>
+                    </view>
+                </view>
+                <!-- <view class="coffee_coupon_list pos_sell">
+                    <view class="coffee_p_t">
+                        <text class="coupon_rmb">¥</text><text class="coupon_price">28</text>全场饮品券
+                    </view>
+                    <view class="coffee_piont">
+                        <view class="jf_point">
+                            2800<text class="jf">积分</text>
+                        </view>
+                        <view class="go_coffee">立即兑换</view>
+                    </view>
+                    <view class="pos_fixed">
+                        <image class="pos_fixed_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/coffee_sold03.png"></image>
+                    </view>
+                </view> -->
+                <view class="coffee_illustration">
+                    <text class="ttle_one_w">使用须知</text>
+                    <text class="ttle_little">1. 本券兑换至您当前登录手机号码中。兑换成功后，请以当前登录乐益通小程序手机号码，登录瑞幸咖啡APP或小程序进行查询及使用。</text>
+                    <text class="ttle_little">2. 使用方法：打开瑞幸开发APP或小程序--我的--咖啡钱包--查看使用即可。</text>
+                    <text class="ttle_little">3. 本券一次性消费，不设找零，不予提现，兑换成功后无法进行退换。</text>
+                    <text class="ttle_little">4. 在 luckin coffee APP或小程序结算时，饮品券可抵扣相应面额的商品费用，但不包含风味糖浆、健康轻食、李运小食boss午餐及配送费，超额需补差价，一次可使用多张饮品券，抵用金额不可开发票。</text>
+                    <text class="ttle_little">5. 如有疑问请致电 luckin coffe 客服电话:4000-100-100。</text>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+    
+</view>

@@ -1,0 +1,69 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/11/16 下午4:07:59 
+使用方法：
+在 /Users/lytcitic/Desktop/wechat-mall/pages/orderDetail/orderDetail.wxml 引入模板
+
+```
+<import src="orderDetail.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/lytcitic/Desktop/wechat-mall/pages/orderDetail/orderDetail.wxss 中引入样式
+```
+@import "./orderDetail.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="comm_box_height orderDetail_box">
+      <view class="common_top_fix color_top_fix common_fixed45">
+        <image class="img_null_login padding_left sk-image"></image>
+        <text class="ttle_name_login sk-transparent sk-text-34-6154-792 sk-text" style="background-position-x: 50%;">订单详情</text>
+        <text class="img_null_login padding_right"></text>
+      </view>
+      <view class="comm_box mar_top110">
+        <view class="order_detail_top status_f">
+          <image class="od_topImg sk-image" mode="aspectFit"></image>
+          <view class="od_t_tt_tw sk-transparent sk-text-29-1667-797 sk-text">已过期</view>
+        </view>
+        <view class="comm_box_center_o order_d_c_box" style="border: none;">
+          <image class="od_detailImg sk-image" lazy-load="true" mode="aspectFit"></image>
+          <view class="ttle_od_box">
+            <text class="od_tex_one sk-transparent sk-text-25-0000-431 sk-text">全国三网通话费10元话费</text>
+            <text class="od_tex_two sk-transparent sk-text-25-0000-654 sk-text">1100积分</text>
+          </view>
+          <view class="cunt_num sk-transparent sk-text-18-7500-361 sk-text">x1</view>
+        </view>
+      </view>
+      <view class="comm_box">
+        <view class="comm_list_text" style="border: none;">
+          <text class="o_d_left sk-transparent sk-text-18-7500-590 sk-text">兑换号码</text>
+          <text class="o_d_right_one sk-transparent sk-text-18-7500-959 sk-text">183****8561</text>
+        </view>
+        <view class="comm_list_text" style="border: none;">
+          <text class="o_d_left sk-transparent sk-text-18-7500-155 sk-text">支付积分</text>
+          <text class="o_d_right sk-transparent sk-text-18-7500-458 sk-text">1100积分</text>
+        </view>
+        <view class="comm_list_text" style="border: none;">
+          <text class="o_d_left sk-transparent sk-text-18-7500-930 sk-text">订单编号</text>
+          <text class="o_d_right sk-transparent sk-text-18-7500-341 sk-text" data-text="20201113165159051148">20201113165159051148</text>
+        </view>
+        <view class="comm_list_text" style="border: none;">
+          <text class="o_d_left sk-transparent sk-text-18-7500-120 sk-text">下单时间</text>
+          <text class="o_d_right sk-transparent sk-text-18-7500-152 sk-text">2020-11-13 16:51:59</text>
+        </view>
+        <view class="comm_box_bottom"></view>
+      </view>
+      <view class="btom_or_d_fix">
+        <view class="left_btom_or">
+          <text class="pay_text_or sk-transparent sk-text-18-7500-386 sk-text">1100积分</text>
+        </view>
+        <view class="right_btom_or">
+          <view class="fix_btn sk-transparent sk-image">再次购买</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

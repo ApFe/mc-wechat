@@ -1,0 +1,65 @@
+<view class="container">
+  <!-- <nav></nav> -->
+  <view class="centerBox home_box {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+    <view class="swiper-container">
+      <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+        <swiper-item wx:for="{{banners}}" wx:key="id">
+          <image  bindtap="tapBanner" data-login="{{item.login}}" data-url="{{item.goUrl}}" src="{{item.imgUrl}}" lazy-load="{{true}}" mode="aspectFit" />
+        </swiper-item>
+      </swiper>
+    </view>
+
+    <view class="tabBox">
+      <view class="tabBoxone">
+        <image class="{{index==0?'tabImg01':'tabImg'}}" wx:for="{{tabal.tabLeft}}" wx:key="index" data-url="{{item.goUrl}}" bindtap="goOtherModel" lazy-load="{{true}}" mode="aspectFit"  src="{{item.imgUrl}}"></image>
+      </view>
+      <view class="tabBoxone">
+        <image class="tabImg" wx:for="{{tabal.tabRight}}" wx:key="index" data-url="{{item.goUrl}}" bindtap="goOtherModel" lazy-load="{{true}}" mode="aspectFit" src="{{item.imgUrl}}"></image>
+      </view>
+    </view>
+
+    <view class="secKillBox">
+      <image class="secKillImg" lazy-load="{{true}}" mode="aspectFit" src="{{seckill[0].imgUrl}}" data-url="{{seckill[0].goUrl}}" bindtap="goOther"></image>
+    </view>
+
+    <view class="swiperB_box"> 
+      <view class="titleText">
+        热门活动
+      </view>
+      <view class="swiper-container swiperBoxt">
+        <swiper class="swipertow" next-margin="170rpx" current-item-id="{{currentItemId}}" previous-margin="170rpx" bindchange="swiperChange" circular>  
+          <block wx:for="{{bannerTwo}}" wx:key="index">
+            <swiper-item  class="swiperItem box_show"  item-id="{{index}}" data-item-id="{{index}}" bindtap='clickChange'>  
+              <view class='box_img_o'>
+                <view class='box_img_t  {{currentItemId == index ? "selected" : ""}}' >
+                  <image  bindtap="tapBanner" data-login="{{item.login}}" data-url="{{item.goUrl}}" src="{{item.imgUrl}}" mode="aspectFit" />
+                </view>
+              </view> 
+            </swiper-item>  
+          </block>
+        </swiper> 
+      </view>
+    </view>
+
+    <view class="recommendB_box" wx:if="{{indexproductsArr.length>=1}}"> 
+      <view class="titleText">
+        商品推荐
+      </view>
+      <view  class="recommendList">
+        <view class="re_detail box_show" wx:for="{{indexproductsArr}}" wx:key="index" data-code="{{item.code}}" data-sold="{{item.sold}}" bindtap="goGoodsDetail">
+          <image class="re_detailImg" lazy-load="{{true}}" mode="aspectFit" src="{{item.product.icon}}"></image>
+          <view class="ttle_re_box">
+            <text class="tex_one">{{item.title}}</text>
+            <!-- <text class="tex_two02 textup" wx:if="{{}}">已售罄</text> -->
+            <text class="tex_two02 texton">{{item.point}}积分</text>
+          </view>
+          <view>
+            <view class="exchangeImg {{item.sold?'clos_btn':'ture_btn'}}">{{item.sold?'已售罄':'立即兑换'}}</view>
+          </view>
+        </view>
+        <view class="overCommon">--------------------------------已经到底了--------------------------------</view>
+      </view>
+      
+    </view>
+  </view>
+</view>

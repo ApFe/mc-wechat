@@ -1,0 +1,53 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<view class="comm_box_height gooddetail_box  {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+    <view class="common_top_fix color_top_fix {{windowIsBang?'common_fixed90':'common_fixed45'}}">
+        <image catchtap="backBtn"  class="img_null_login padding_left" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/back_icon.png"></image>
+        <text class="ttle_name_login">商品详情</text>
+        <text class="img_null_login padding_right"></text>
+    </view>
+    <view class="swiper-container mar_top40">
+        <swiper class="swiper_detail" indicator-dots="true" indicator-color="#b1b1b1" indicator-active-color="#f9ca00" autoplay circular>
+            <swiper-item wx:for="{{goodnav}}" wx:key="id">
+                <image class="detail_img"  mode="aspectFit"  lazy-load="{{true}}" data-url="{{item.url}}" src="{{item.url}}" />
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="comm_box_height">
+        <view class="comm_c_b">
+            <view class="comm_box detail_all_box">
+                <view class="detail_top_box">
+                    <view class="detail_ing">{{goodsDetail.point}}积分</view>
+                    <view class="detail_add_cunt">
+                        <image class="good_detailImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/cunt021.png"></image>
+                        <text class="num_cunt">1</text>
+                        <image class="good_detailImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/cunt011.png"></image>
+                    </view>
+                </view>
+                <text class="detail_name_o">{{goodsDetail.product.title}}</text>
+                <text class="detail_name_t">{{goodsDetail.product.subtitle}}</text>
+                <text class="detail_name_r">已兑换200件</text>
+            </view>
+            <view class="detail_fw_box">
+                <view class="fw_box">
+                    <text class="fw_name">服务</text>
+                    <text class="fw_all_o">虚拟商品不支持退换货</text>
+                </view>
+            </view>
+            <view class="comm_box">
+                <view class="img_text">图文详情</view>
+                <view class="dt_img_box">
+                    <image class="dt_img_xq" mode="widthFix" wx:for="{{goodsDetail.pictures}}" wx:key="index" lazy-load="{{true}}" src="{{item.url}}"></image>
+                </view>
+            </view>
+            <view class="over">--------------------------------已经到底了--------------------------------</view>
+            <view class="comm_flex_box">
+                <view class="kf_box" bindtap="contactSupport">
+                    <image class="kf_img" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                    <text class="kf_text">客服</text>
+                </view>
+                <view class="btn_box_pay" bindtap="goPayOrder">立即兑换</view>
+            </view>
+        </view>
+    </view>
+</view>
+

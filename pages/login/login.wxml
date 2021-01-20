@@ -1,0 +1,50 @@
+<!--pages/login/login.wxml-->
+<view class="comm_box_height payment_box">
+    <view class="comm_box_height">
+        <view class="common_top_fix color_top_fix {{windowIsBang?'common_fixed90':'common_fixed45'}} comm_back_h">
+            <image catchtap="backBtn"  class="img_null_login padding_left" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/back_icon.png"></image>
+            <text class="ttle_name_login">账户登录</text>
+            <text class="img_null_login padding_right"></text>
+        </view>
+        <view class="comm_c_b  {{windowIsBang?'mar_top162':'mar_top110'}}"  wx:if="{{!loginMobile}}">
+            <view class="comm_box">
+                <text class="login_btnTop_text">欢迎来到乐益通积分商城</text>
+                <image class="login_topImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/login/login_icon.png"></image>
+                <button  class="comm_box_allbtn {{loginbtn==true?'loginb_box':'comm_msg_btnfal'}} " wx:if="{{loginCodeTrue}}"  catchtap="loginCode">
+                    <image class="login_btnImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/login/icon_login.png"></image>
+                    <text class="btn_login_t">微信一键登录</text>
+                </button>
+                <button  class="comm_box_allbtn loginb_box" wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+                <!-- <button  class="comm_box_allbtn loginb_box" wx:else catchtap="getPhoneNumber"> -->
+                    <image class="login_btnImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/login/icon_login.png"></image>
+                    <text class="btn_login_t">微信一键登录</text>
+                </button>
+                <button  class="comm_box_allbtn loginb_box loginb_box_two" catchtap="iphonLogin">
+                   <text class="btn_login_t">手机号验证码登录</text>
+                </button>
+            </view>
+        </view>
+
+        <view class="comm_c_b  {{windowIsBang?'mar_top162':'mar_top110'}}" wx:if="{{loginMobile}}">
+            <image class="logo_login_img"  mode="aspectFit"  src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/login/logo.png"></image>
+            <view class="comm_box">
+                <view class="comm_box_center_o log_moblie">
+                    <text class="comm_box_c_ttle login_box_c_ttle">手机号</text>
+                    <input class="comm_box_c_ttle_two" type="number" bindinput="iphonInput" placeholder="请输入手机号" maxlength="11" placeholder-style="color:#B1B1B1;" value="{{userInfo.mobile}}" />
+                </view>
+                
+                <view class="comm_box_center_o log_sendmsg">
+                    <text class="comm_box_c_ttle login_box_c_ttle">验证码</text>
+                    <input class="comm_box_c_ttle_two" type="number" maxlength="6" bindinput="msgInput" placeholder="请输入短信验证码" placeholder-style="color:#B1B1B1;" />
+                    <text class="login_text_smg" catchtap="smgsend">{{counttime=='获取验证码'?counttime:counttime=='重新发送'?counttime:counttime+'s'}}</text>
+                </view>
+            </view>
+            <view  class="comm_box_allbtn loginb_box {{loginOauthTrue==false?'comm_msg_btnfal':'comm_msg_btnTrue'}} login_beTure"  catchtap="loginOauth">
+                <text class="btn_login_t">确定</text>
+            </view>
+            <view class="login_union">
+                点击确定，即表示已阅读并同意<text class="log_un_text" catchtap="lytprotocol">《注册会员服务条款》</text>
+            </view>
+        </view>
+    </view>
+</view>

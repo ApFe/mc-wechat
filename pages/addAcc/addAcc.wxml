@@ -1,0 +1,42 @@
+<!--pages/addAcc/addAcc.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height addAcc_box">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="comm_box_center_o addAcc_center">
+                    <text class="comm_box_c_ttle">证件号码</text>
+                    <input class="comm_box_c_ttle_two" type="text" bindinput="rollinNameInput" placeholder="请输入证件号码" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="addAcc_center_text">
+                    请输入证件号码查询名下积分账户
+                </view> 
+                <view class="comm_box_allbtn {{seachInput?'comm_msg_btnTrue':'comm_msg_btnfal'}}" bindtap="seachCards">查询</view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="f_res" wx:if="{{seachCardsList}}">--------------------查询结果--------------------</view>
+            <view class="f_res" wx:if="{{seachCardsListNone}}">未匹配到与此证件相关尚未使用的账户</view>
+            <view class="comm_box {{secHcards.bound?'sold_color':''}}" wx:if="{{seachCardsList}}" wx:for="{{seachCardsList}}" wx:key="key" wx:for-item='secHcards' data-type="{{secHcards.type}}" data-cardno="{{secHcards.cardNo}}" data-mobile="{{secHcards.mobile}}" data-bound="{{secHcards.bound}}" bindtap="addAcccar">
+                <view class="add_jf_top">
+                    <image class="jf_topImg" mode="aspectFit" src="{{secHcards.type=='WEB'?'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/1000@3x.png':secHcards.type=='NAME'?'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/2000@3x.png':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/5000@3x.png'}}"></image>
+                    <view class="mina_t_tt">{{filter.cardsType(secHcards.type)}}</view>
+                </view>
+                <view class="add_jf_center">
+                    <view class="acc_num acc_num_l">
+                        <text class="acc_num_no">{{filter.numberToFixed('12',secHcards.type,{nameCardNo:secHcards.nameCardNo,loginName:secHcards.loginName,mobile:secHcards.mobile})}}</text>
+                        <text class="acc_num_nam">{{filter.cardsttle(secHcards.type)}}</text>
+                    </view>
+                    <view class="acc_num acc_num_r">
+                        <text class="acc_num_no">{{secHcards.balance}}积分</text>
+                        <text class="acc_num_nam">余额</text>
+                    </view>
+                    <view class="addAcc_btn {{secHcards.bound?'addAcc_btn_bnd':''}}">{{secHcards.bound?'已绑定':'添加'}}</view>
+                </view>
+            </view>
+            <view class="kf_box" wx:if="{{seachCardsList}}" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,57 @@
+/* pages/transferes/results.wxss */
+.tran_res .gold_img {
+    width: 200rpx;
+    height: 110rpx;
+    margin-top: 25rpx;
+}
+
+.tran_res .res_ttle {
+    font-size: 28rpx;
+    flex: 1;
+    margin: 25rpx 0;
+    color: rgb(121, 121, 121);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tran_res .res_ttle .res_ttle_t {
+    font-size: 24rpx;
+    color: rgb(177, 177, 177);
+}
+
+.tran_res .seeAcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rpx;
+    margin-bottom: 40rpx;
+}
+
+.tran_res .seeAcc .kong_box {
+    width: 65rpx;
+    height: 68rpx;
+}
+
+.tran_res .seeAcc .res_btn {
+    width: 249rpx;
+    height: 68rpx;
+    border-radius: 34rpx;
+    color: #ffffff;
+    font-size: 28rpx;
+    line-height: 68rpx;
+    text-align: center;
+    background-color: rgb(221, 221, 221);
+}
+
+.tran_res .seeAcc .r_btn_r {
+    background: linear-gradient(to bottom right, rgb(250, 159, 0), rgb(249, 202, 0));
+}
+
+.tran_res .tran_mboxtop {
+    margin-top: 15rpx;
+}
+
+.tran_res .trans_list_text .trans_two_text {
+    color: rgb(104, 104, 104);
+}

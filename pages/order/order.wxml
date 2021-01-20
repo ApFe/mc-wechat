@@ -1,0 +1,44 @@
+<!--pages/order/order.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height order_list_box">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b" wx:if="{{orderTorF}}">
+            <view class="comm_box box_show20"   wx:for="{{orderListArr}}" wx:key="id" data-itemlist="{{item}}">
+                <view class="order_list_top"  data-tradeno="{{item.tradeNo}}"  bindtap="goOrderDetail">
+                    <image class="od_topImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/nav/order-off.png"></image>
+                    <view class="od_t_tt">{{item.tradeNo}}</view>
+                    <view class="od_t_tt_tw">{{filter.enuStatus(item.status)}}</view>
+                </view>
+                <view class="comm_box_center_o order_c_box" data-tradeno="{{item.tradeNo}}" bindtap="goOrderDetail">
+                    <image class="od_detailImg" lazy-load="{{true}}" mode="aspectFit" src="{{item.items[0].icon}}"></image>
+                    <view class="ttle_od_box">
+                        <text class="od_tex_one">{{item.items[0].title}}</text>
+                        <text class="od_tex_two">下单时间：{{item.createdAt}}</text>
+                    </view>
+                    <view class="cunt_num">x1</view>
+                </view>
+                <view class="order_list_btom">
+                    <view class="od_t_tt b_teo_t">
+                        {{filter.enuorStatus(item.status)}}
+                        <text class="bb_tt">{{item.point}}积分</text>
+                    </view>
+                    <view class="od_t_tt_tw_b_d" wx:if="{{item.status=='FINISHED'||item.status=='CANCELLED'||item.status=='FAILED'}}" data-tradeno="{{item.tradeNo}}" bindtap="deleteOrders">删除订单</view>
+                    <view class="od_t_tt_tw_b_d" wx:if="{{item.status=='PAYING'}}" data-tradeno="{{item.tradeNo}}" bindtap="cancelOrders">取消订单</view>
+                    <view class="od_t_tt_tw_b" wx:if="{{item.status=='PAYING'}}" data-paymethod="{{item.payMethod}}" data-inprice="{{item.point}}" data-price="{{item.price}}" data-expired="{{item.expiredAt}}" data-tradeno="{{item.tradeNo}}" bindtap="goPaymentAuth">立即付款</view>
+                    <view class="od_t_tt_tw_b" wx:if="{{item.status!='PAYING'}}" bindtap="gohome">再次购买</view>
+                </view>
+            </view>
+            <view class="overCommon" wx:if="{{show}}">--------------------------------已经到底了--------------------------------</view>
+        </view>
+        <view class="comm_c_b" wx:else>
+            <view class="comm_box">
+                <view class="noorder_list_box">
+                    <image   class="no_order_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/no_order_icon.png"></image>
+                    <text class="no_order_text">暂时没有订单</text>
+                    <text class="no_order_text_tow">每天都给自己一个惊喜吧！</text>
+                    <view class="no_order_shop" bindtap="goHangout">去逛逛</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

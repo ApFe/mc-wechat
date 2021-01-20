@@ -1,0 +1,112 @@
+/* openCard/pages/openAccFrom/openAccFrom.wxss */
+.mui-views,
+.mui-view,
+.mui-pages,
+.mui-page,
+.mui-page-content {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+#xxx{
+    position: relative;
+    background-color: #fff;
+    width: 674rpx;
+    border-radius: 30rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30rpx;
+     
+}
+.bodyboxshiy{
+width:100%;
+height:auto;
+/*display: none;
+opacity:0;*/
+}
+.id_card_up{
+width:100%;
+height:auto;
+padding-top:10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+}
+.quedingquxiao div{
+width:100%;
+height: 46px;
+float: left;
+text-align:center;
+}
+.lefttianxiebox{
+background-color:rgba(0,0,0,.12);
+}
+.lefttianxiebox p{
+color:rgba(0,0,0,.78);
+font-family: "黑体";
+line-height:48px;
+font-size:18px;
+letter-spacing:1px;
+}
+.righttianxiebox p{
+color:rgba(255,255,255,.9);
+font-family: "黑体";
+line-height:44px;
+font-size:18px;
+letter-spacing:1px;
+}
+.imgboxsy{
+width:473rpx;	
+height:300rpx;
+margin-left: auto;
+margin-right: auto;
+margin-top:10px;
+border-radius:30rpx;
+text-align: center;
+}
+.id_cardImg{
+    width:474rpx;	
+    height:300rpx;
+    border-radius:30rpx;
+}
+.id_text{
+    margin-top: 22rpx;
+    font-size: 26rpx;
+    color: rgb(251,185,68);
+}
+.mar_top52{
+    width: 591rpx;
+    min-height: 102rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 52rpx;
+}
+.no_idCard{
+    font-size: 30rpx;
+    color: rgb(82,109,226);
+}
+.cmbc_up_lest{
+    width: 620rpx;
+    min-height: 150rpx;
+}
+.up_list_step_img{
+    width: 620rpx;
+    height: 150rpx;
+}
+.up_list_img_box{
+    min-width: 635rpx;
+    min-height: 45rpx;
+    display: flex;
+    align-items: center;
+}
+.cmbc_upsetp_text{
+    width: 158rpx;
+    font-size: 24rpx;
+    color: rgb(104,104,104);
+    text-align: center;
+}

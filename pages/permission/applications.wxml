@@ -1,0 +1,42 @@
+<!--pages/permission/applications.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="tran_box comm_box_height">
+    <view class="tran_bb_box comm_box_height">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <text class="comm_box_top_one">申请白名单手机号</text>
+                <view class="comm_box_center_or">
+                    <view class="comm_box_center_cbo">
+                        <text class="comm_box_c_ttle">手机号</text>
+                        <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="number" value="{{iPhonemobile}}"  placeholder="请输入申请白名单手机号" bindinput="inputmobile"></input>
+                        
+                    </view>
+                </view>
+                <view class="comm_box_bottom explainmsg">*请确保开通白名单手机号与登录小程序手机号保持一致</view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="comm_box" wx:if="{{!donemobile}}">
+                <view class="comm_box_bottom styleText" wx:if="{{mobileArr.length>0}}">本次申请手机号{{mobileArr.length}}个</view>
+                <view class="comm_box_center_cbo styleheight" wx:for="{{mobileArr}}" wx:for-item='item' wx:key="index">
+                    <text class="comm_box_c_ttle">申请手机号</text>
+                    <view class="comm_box_c_ttle_two">{{item}}</view>
+                    <image catchtap="delMobile" data-value="{{item}}"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/del.png"></image>
+                </view>
+                <view class="comm_box_allbtn {{mobileArr.length>0?'comm_msg_btnTrue':'comm_msg_btnfal'}}" bindtap="cmbcPrivileges">提交申请</view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="comm_box" wx:else>
+                <view class="comm_box_top_one" >本次已通过申请{{donemobileArr.length}}个，结果如下：</view>
+                <view class="comm_box_center_cbo styleheight">
+                    <text class="comm_box_c_ttle">申请手机号</text>
+                    <view class="img_null"> </view>
+                </view>
+                <view class="comm_box_center_cbo styleheight" wx:for="{{donemobileArr}}" wx:for-item='item' wx:key="index">
+                    <view class="comm_box_c_ttle_two">{{item}}</view>
+                    <image   class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/se_icon.png"></image>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+    </view>
+</view>

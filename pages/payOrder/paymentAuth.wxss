@@ -1,0 +1,69 @@
+/* pages/payOrder/paymentAuth.wxss */
+.payment_box .pam_top_i{
+    width: 592rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 29rpx;
+    padding-bottom: 23rpx;
+}
+.payment_box .top_i_text{
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+}
+.payment_box .top_i_texttwo{
+    font-size: 20rpx;
+    line-height: 2;
+    color: rgb(177, 177, 177);
+}
+.payment_box .top_i_int{
+    font-size: 38rpx;
+    line-height: 3.6;
+    color: rgb(82, 109, 226);
+}
+.payment_box .pam_ttle{
+    width: 592rpx;
+    font-size: 24rpx;
+    line-height: 1;
+    color: rgb(104, 104, 104);
+    margin-top: 44rpx;
+    margin-bottom: 10rpx;
+}
+.payment_box .pam_top_ii{ 
+    width: 592rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    padding: 20rpx 0;
+}
+.payment_box .pam_top_iier{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20rpx 0;
+    margin-left: 58rpx;
+}
+.payment_box .radio{
+    width: 592rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+}
+.payment_box .top_i_texter{
+    font-size: 28rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+}
+.payment_box .top_i_inter{
+    font-size: 20rpx;
+    line-height: 2;
+    color: rgb(82, 109, 226);
+}
+.payment_box .pamsb_box{
+    margin-top: 146rpx;
+}

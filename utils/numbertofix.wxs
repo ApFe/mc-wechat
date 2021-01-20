@@ -1,0 +1,326 @@
+// 支持es4语法
+var filter = {
+	numberToFixed: function(value,type,options){
+		options = options || {}
+		var CardNoStr = options.nameCardNo
+			loginStr = options.loginName
+			mobileStr = options.mobile
+		var str1,
+			str2,
+			str
+		if(!!value){
+			if(type!='12'){
+				if((type=='NAME'||type=='MINSHENG_NAME')&&!!CardNoStr){
+					str1 = CardNoStr.substring(4,-2)
+					str2 = CardNoStr.substring(CardNoStr.length-4,CardNoStr.length)
+				}else if(type=='WEB'&&!!loginStr){
+					str1 = loginStr.substring(2,-2)
+					str2 = loginStr.substring(loginStr.length-4,loginStr.length)
+				}else if(type=='SIMPLE'&&!!mobileStr){
+					str1 = mobileStr.substring(3,-2)
+					str2 = mobileStr.substring(mobileStr.length-4,mobileStr.length)
+				}else{
+
+				}
+				// var str2 = value.substring(value.length-4,value.length)
+				str = str1+'****'+str2
+			}else{
+				str2 = value.substring(value.length-4,value.length)
+				str = '(尾号'+str2+')'
+			}
+		}else{
+			str = '账户信息不存在'+value+type
+		}
+		return str
+	},
+	enuStatus:function(a){
+		var statusNameobj={
+		  'NONE':'未知',
+		  'CONFIRMING':'待确认',
+		  'PAYING':'待付款',
+		  'PAID':'付款成功',
+		  'PROCESSING':'处理中',
+		  'DISPATCHING':'待发货',
+		  'DISPATCHED':'已发货',
+		  'FINISHED':'已完成',
+		  'CANCELLED':'已取消',
+		  'FAILED':'失败退款',
+		  'EXPIRED':'已过期'
+		}
+		return statusNameobj[a]
+	},
+	enuorStatus:function(a){
+		var statusNameobj={
+		  'NONE':'应付积分：',
+		  'CONFIRMING':'应付积分：',
+		  'PAYING':'应付积分：',
+		  'PAID':'已付积分：',
+		  'PROCESSING':'已付积分：',
+		  'DISPATCHING':'已付积分：',
+		  'DISPATCHED':'已付积分：',
+		  'FINISHED':'已付积分：',
+		  'CANCELLED':'应付积分：',
+		  'FAILED':'应付积分：'
+		}
+		return statusNameobj[a]
+	},
+	productType:function(a){
+		var typeNameobj={
+		  'MOBILE_CARD':'兑换号码',
+		  'OIL_CARD':'兑换卡号',
+		  'COFFEE_COUPON':'下发手机号',
+		  'VIDEO_CARD':'兑换码',
+		  'TRIP_CARD':'兑换码',
+		  'FOOD_CARD':'兑换码',
+		  'MUSIC_CARD':'兑换码',
+		  'GAME_CARD':'兑换码'
+		}
+		return typeNameobj[a]
+	},
+	cardsttle:function(a){
+		var ttleobj={
+			'MINSHENG_NAME':'卡号',
+			'SIMPLE':'手机号',
+			'NAME':'卡号',
+			'WEB':'登录名'
+		  }
+		  return ttleobj[a]
+	},
+	cardsType:function(a){
+		var cardsobj={
+		  'MINSHENG_NAME':'民生联名卡账户',
+		  'SIMPLE':'简易积分账户',
+		  'NAME':'中信联名卡账户',
+		  'WEB':'网站主账户'
+		}
+		return cardsobj[a]
+	},
+	productTypeTrue:function(a){
+		var typeNameobj01={
+			'MOBILE_CARD':'1',
+			'OIL_CARD':'1',
+			'COFFEE_COUPON':'1'
+		}
+		var typeNameobj02={
+			'VIDEO_CARD':'2',
+			'TRIP_CARD':'2',
+			'FOOD_CARD':'2'
+		}
+		
+		return typeNameobj01[a]?typeNameobj01[a]:typeNameobj02[a]
+	},
+	blankstr:function(a,b){
+		var str,s1,s2,s3,s4
+		if(!!a){
+			if(b=='moblie'){
+				s1 = a.substring(0,3)
+				s2 = a.substring(3,7)
+				s3 = a.substring(7,11)
+				str = s1+' '+s2+' '+s3
+			}else if(b=='card'){
+				s1 = a.substring(0,4)
+				s2 = a.substring(4,8)
+				s3 = a.substring(8,12)
+				s4 = a.substring(12,16)
+				str = s1+' '+s2+' '+s3+' '+s4
+			}
+		}else{
+			str = '数据错误！'
+		}
+		
+		
+		return str
+	},
+	cardsLogo:function(a){
+		var cardsobj={
+			'MINSHENG_NAME':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/6000@3x.png',
+			'SIMPLE':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/5000@3x.png',
+			'NAME':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/2000@3x.png',
+			'WEB':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/1000@3x.png'
+		}
+		return cardsobj[a]
+	},
+	inputText:function(a){
+		var inputTextObj={
+			'MINSHENG_NAME':'请输入民生联名卡号',
+		  	'SIMPLE':'请输入手机号',
+		  	'NAME':'请输入中信联名卡号',
+		  	'WEB':'请输入登录名'
+		}
+		return inputTextObj[a]
+	},
+	inputTextTop:function(a){
+		var inputTextObjT={
+			'MINSHENG_NAME':'联名卡号',
+			'SIMPLE':'手机号',
+		  	'NAME':'联名卡号',
+		  	'WEB':'登录名'
+		}
+		return inputTextObjT[a]
+	},
+	accCardType:function(a){
+		var accCardTypeObj={
+			'MINSHENG_NAME':'支持微信/支付宝扫码付',
+			'SIMPLE':'线上积分商城兑换',
+			'NAME':'支持POS机刷卡',
+			'WEB':'线上积分商城兑换'
+		}
+		return accCardTypeObj[a]
+	},
+	cmbcOpenStatus:function(status){
+		var openStatus = {
+			'NONE':'未知状态',
+			'SUCCESS':'开户成功',
+			'FAIL':'开户失败',
+			'PROCESSING':'审核中...'
+		}
+		return openStatus[status]
+	},
+	cmbcStatus:function(colorimg,status){
+		var returnStr,imgStatus,colorStatus,colseImg,approvalstext
+		colseImg = {
+			'92':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/err_icon.png',
+			'00':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/sess_icon.png',
+			'93':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/err_icon.png',
+			'91':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/writ_icon.png'
+		}
+		imgStatus = {
+			'NONE':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/err_icon.png',
+			'SUCCESS':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/sess_icon.png',
+			'FAIL':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/err_icon.png',
+			'PROCESSING':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/writ_icon.png'
+		}
+		colorStatus = {
+			'NONE':'status_f',
+			'SUCCESS':'',
+			'FAIL':'status_f',
+			'PROCESSING':'status_w'
+		}
+		textStatus = {
+			'NONE':'未知原因...',
+			'SUCCESS':'亲爱的用户',
+			'FAIL':'抱歉，开户失败！',
+			'PROCESSING':'您的开户申请已提交，正在审核...'
+		}
+		textStatusTwo = {
+			'NONE':'系统异常，请联系客服',
+			'SUCCESS':'您现在已成功开通了民生银行二类电子账户',
+			'FAIL':'请联系客服...',
+			'PROCESSING':'请稍后查看。'
+		}
+		approvalstext = {
+			'AUDITING':'审核中',
+			'AUDITED':'审核通过',
+			'DENY':'已驳回'
+		}
+		switch (colorimg) {
+			case 'img':
+				returnStr =  imgStatus[status]
+				break;
+			case 'col':
+				returnStr =  colorStatus[status]
+				break;
+			case 'text':
+				returnStr =  textStatus[status]
+				break;		
+			case 'textTwo':
+				returnStr =  textStatusTwo[status]
+				break;	
+			case 'approvals':
+				returnStr = approvalstext[status]
+				break;
+			default:
+				returnStr = colseImg[status]
+				break;
+		}
+		// if(colorimg=='img'){
+		// 	returnStr =  imgStatus[status]
+		// }else if(colorimg=='col'){
+		// 	returnStr =  colorStatus[status]
+		// }else if(colorimg=='text'){
+		// 	returnStr =  textStatus[status]
+		// }else if(colorimg=='textTwo'){
+		// 	returnStr =  textStatusTwo[status]
+		// }
+		return returnStr
+	},
+	orderstatus:function(sequence,status){
+		var orderStatusOneObj,orderStatusTwoObj,orderStatusSreeObj,arrRes
+			orderStatusOneObj = {
+				'FAILED':true,
+			 	'CANCELLED':true,
+			 	'FINISHED':true,
+			 	'EXPIRED':true
+			}
+			orderStatusTwoObj= {
+				'PROCESSING':true,
+			 	'PAID':true,
+			 	'DISPATCHING':true
+			}
+			orderStatusSreeObj = {
+				'NONE':true,
+				'CONFIRMING':true,
+				'PAYING':true,
+				'PAID':true,
+				'PROCESSING':true,
+				'DISPATCHING':true,
+				'DISPATCHED':true
+			}
+			switch (sequence) {
+				case 'one':
+					arrRes = orderStatusOneObj[status]
+					break;
+				case 'two':
+					arrRes = orderStatusTwoObj[status]
+					break;
+				case 'three':
+					arrRes = orderStatusSreeObj[status]
+					break;
+				default:
+					arrRes = false
+					break;
+			}
+		
+		return arrRes
+	},
+	numberToStr:function(value,num){
+		var numstr = value.toFixed(num)
+		return numstr
+	},
+	formatetime:function(datetime) {//2020-09-15T16:43:42-->2020-09-15 16:43:42
+    function addDateZero(num) {
+        return (num < 10 ? "0" + num : num);
+    }
+    var d = getDate(datetime);
+    var formatdatetime = d.getFullYear() + '-' + addDateZero(d.getMonth() + 1) + '-' + addDateZero(d.getDate()) + ' ' + addDateZero(d.getHours()) + ':' + addDateZero(d.getMinutes()) + ':' + addDateZero(d.getSeconds());
+    return formatdatetime;
+	},
+	formateday:function(datetime) {//2020-09-15T16:43:42-->20200915
+    function addDateZero(num) {
+        return (num < 10 ? "0" + num : num);
+    }
+    var d = getDate(datetime);
+    var formatdatetime = d.getFullYear() + addDateZero(d.getMonth() + 1) + addDateZero(d.getDate()) ;
+    return formatdatetime;
+	}
+}
+// 导出对外暴露的属性
+module.exports = {
+	numberToStr:filter.numberToStr,
+	numberToFixed: filter.numberToFixed,
+	enuStatus:filter.enuStatus,
+	enuorStatus:filter.enuorStatus,
+	blankstr:filter.blankstr,
+	productType:filter.productType,
+	productTypeTrue:filter.productTypeTrue,
+	cardsType:filter.cardsType,
+	cardsLogo:filter.cardsLogo,
+	cardsttle:filter.cardsttle,
+	inputText:filter.inputText,
+	inputTextTop:filter.inputTextTop,
+	accCardType:filter.accCardType,
+	cmbcOpenStatus:filter.cmbcOpenStatus,
+	cmbcStatus:filter.cmbcStatus,
+	orderstatus:filter.orderstatus,
+	formateday:filter.formateday
+}

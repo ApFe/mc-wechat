@@ -1,0 +1,38 @@
+/* pages/accountsList/acclistDetail.wxss */
+.accDetail_box{
+    width: 100%;
+}
+.comm_two_centerBox{
+    width: 100%;
+}
+.accDetail_box .acc_detail_r{
+    margin-top: 28rpx;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    width: 100%;
+    height: 70rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accDetail_box .l_a_two_l{
+    color: rgb(177, 177, 177);
+}
+.accDetail_box .acc_detail_change{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 592rpx;
+    height: 155rpx;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    color: rgb(104, 104, 104);
+    font-size: 24rpx;
+    box-sizing: border-box;
+}
+.accDetail_box .acc_listbox{
+    width: 592rpx;
+}
+.accDetail_box .acc_detail_change .change_text_t{
+    font-size: 38rpx;
+}

@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/index/home",
+    "pages/order/order",
+    "pages/mine/mine",
+    "pages/personal/settings",
+    "pages/integral/recharge",
+    "pages/transfer/transfer",
+    "pages/recharge/rechargeTal",
+    "pages/refuelcard/refuelcard",
+    "pages/transferes/results",
+    "pages/accountsList/acclist",
+    "pages/accountsList/acclistDetail",
+    "pages/addAcc/addAcc",
+    "pages/addAcc/addAccadd",
+    "pages/union/bindAcc",
+    "pages/coffeeList/coffeeList",
+    "pages/coffeeList/videoLifeList",
+    "pages/goodsList/goodsList",
+    "pages/goodsDetail/goodsDetail",
+    "pages/payOrder/payOrder",
+    "pages/payOrder/paymentAuth",
+    "pages/payMsg/payMsg",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/start/lytprotocol",
+    "pages/start/start",
+    "pages/permission/applications"
+  ],
+  "subpackages": [
+    {
+      "root": "wallet",
+      "pages": [
+        "pages/walletIndex/walletIndex",
+        "pages/walletDettail/walletDettail",
+        "pages/walletrecharge/rechargeCmbc",
+        "pages/walletrecharge/resultCmbc"
+      ]
+    },
+    {
+      "root": "openCard",
+      "pages": [
+        "pages/opencmbc/guidepage",
+        "pages/openAcc/openAcccount",
+        "pages/opencmbcp/openportocol",
+        "pages/opencmbcp/openportocolcmbc",
+        "pages/openAccResult/openAccResult",
+        "pages/openAccFrom/openAccFrom",
+        "pages/controlBox/controlBox",
+        "pages/virtualBank/virtualBank",
+        "pages/changevirtualBank/changevirtualBankmessage",
+        "pages/retrievePassword/cmbcPassword",
+        "pages/cmbcClose/closeAccount"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FAA200",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#F8F8F8",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#7f7f7f",
+    "backgroundColor": "#FBFBFD",
+    "selectedColor": "#FBB944",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/nav/home-off.png",
+        "selectedIconPath": "images/nav/home-on.png"
+      },
+      {
+        "text": "订单",
+        "pagePath": "pages/order/order",
+        "iconPath": "images/nav/order-off.png",
+        "selectedIconPath": "images/nav/order-on.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/nav/my-off.png",
+        "selectedIconPath": "images/nav/my-on.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

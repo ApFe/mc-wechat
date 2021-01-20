@@ -1,0 +1,34 @@
+/* openCard/pages/cmbcClose/closeAccount.wxss */
+.closeAcc_res .openAccRlt_top{
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+    background-color: rgb(251,185,68);
+}
+.closeAcc_res .oar_topImg{
+    height: 33rpx;
+    width: 33rpx;
+    margin-left: 40rpx;
+    margin-right: 16rpx;
+}
+.closeAcc_res .oar_t_tt_tw{
+    flex: 1;
+    font-size: 30rpx;
+    color: #ffffff;
+    height: 72rpx;
+    line-height: 72rpx;
+}
+.closeAcc_res .sess_text{
+    height: 140rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+}
+.closeAcc_res .text_top{
+    font-size: 28rpx;
+    color: rgb(104,104,104);
+}

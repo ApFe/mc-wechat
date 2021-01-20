@@ -1,0 +1,35 @@
+<!--wallet/pages/walletrecharge/resultCmbc.wxml-->
+<view class="comm_box_height cmbc_result_box">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="comm_box_bottom"></view>
+                <view class="cmbc_result_top_box">
+                    <image   class="cmbc_result_img" lazy-load="{{true}}" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/icon_accounts_success@3x.png"></image>
+                    <text class="cmbc_result_text">{{bankUrl=='recharge'?'充值成功':'提现成功'}}</text>
+                    <view class="cmbc_result_btn_box">
+                        <view class="cmbc_result_btn cmbc_result_btn_color" bindtap="gowalletIndex">查看账户</view>
+                    </view>
+                </view>
+                <view class="comm_box_bottom30"></view>
+            </view>
+            <view class="comm_c_b">
+                <view class="comm_box">
+                    <view class="comm_list_text tran_mboxtop">
+                        <text class="trans_one_text">{{bankUrl=='recharge'?'充值账户':'提现账户'}}</text>
+                        <text class="trans_two_text">{{bankUrl=='recharge'?'民生银行':'其他银行'}}</text>
+                    </view>
+                    <view class="comm_list_text">
+                        <text class="trans_one_text">{{bankUrl=='recharge'?'充值金额':'提现金额'}}</text>
+                        <text class="trans_two_text">¥ {{seccObj.amount/100}}</text>
+                    </view>
+                    <view class="comm_list_text">
+                        <text class="trans_one_text">{{bankUrl=='recharge'?'充值时间':'提现时间'}}</text>
+                        <text class="trans_two_text">{{seccObj.tradedAt}}</text>
+                    </view>
+                    <view class="comm_box_bottom"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

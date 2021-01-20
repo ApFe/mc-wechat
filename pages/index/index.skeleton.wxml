@@ -1,0 +1,51 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/11/16 下午4:06:28 
+使用方法：
+在 /Users/lytcitic/Desktop/wechat-mall/pages/index/index.wxml 引入模板
+
+```
+<import src="index.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/lytcitic/Desktop/wechat-mall/pages/index/index.wxss 中引入样式
+```
+@import "./index.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="container">
+      <view class="centerBox home_box nav_padding_top90 sk-image">
+        <view class="swiper-container">
+          <swiper autoplay="false" circular="true" class="swiper1" indicator-active-color="#fff" indicator-dots="true" current="0">
+            <swiper-item style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+              <image data-url="/openCard/pages/virtualBank/virtualBank" lazy-load="true" mode="aspectFit" class="sk-image"></image>
+            </swiper-item>
+          </swiper>
+        </view>
+        <view class="tabBox">
+          <view class="tabBoxone">
+            <image class="tabImg01 sk-image" data-url="../recharge/rechargeTal" lazy-load="true" mode="aspectFit"></image>
+            <image class="tabImg sk-image" data-url="../coffeeList/coffeeList" lazy-load="true" mode="aspectFit"></image>
+          </view>
+          <view class="tabBoxone">
+            <image class="tabImg sk-image" data-url="../refuelcard/refuelcard" lazy-load="true" mode="aspectFit"></image>
+            <image class="tabImg sk-image" data-url="../coffeeList/videoLifeList?urlId=3" lazy-load="true" mode="aspectFit"></image>
+            <image class="tabImg sk-image" data-url="../coffeeList/videoLifeList?urlId=2" lazy-load="true" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view class="secKillBox">
+          <image class="secKillImg sk-image" data-url="/openCard/pages/opencmbc/guidepage" lazy-load="true" mode="aspectFit"></image>
+        </view>
+        <view class="swiperB_box">
+          <view class="titleText sk-transparent sk-text-0-0000-331 sk-text">
+            热门活动
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

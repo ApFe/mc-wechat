@@ -1,0 +1,90 @@
+<!--openCard/pages/openAccResult/openAccResult.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="openAcc_res comm_box_height">
+    <view class="comm_box_height {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+        <view class="common_top_fix color_top_fix {{windowIsBang?'common_fixed90':'common_fixed45'}}">
+            <image catchtap="backBtn"  class="img_null_login padding_left" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/back_icon.png"></image>
+            <text class="ttle_name_login">开户结果</text>
+            <text class="img_null_login padding_right"></text>
+        </view>
+        <view class="comm_c_b nav_padding_top90">
+            <view class="comm_box">
+                <view class="openAccRlt_top {{filter.cmbcStatus('col',cmbcdata.status)}}">
+                    <image class="oar_topImg" mode="aspectFit" src="{{filter.cmbcStatus('img',cmbcdata.status)}}"></image>
+                    <view class="oar_t_tt_tw">{{errtextall?'开户异常':filter.cmbcOpenStatus(cmbcdata.status)}}</view>
+                    <!-- <view class="od_t_tt_tw">{{filter.enuStatus(orderDetail.status)}}</view> -->
+                </view>
+                <view class="sess_text">
+                    <text class="text_top" wx:if="{{cmbcdata.status=='SUCCESS'}}">{{filter.cmbcStatus('text',cmbcdata.status)}}{{cmbcdata.username}}</text>
+                    <text class="text_top" wx:else>{{errtextall?'异常原因：'+errtextall:filter.cmbcStatus('text',cmbcdata.status)}}</text>
+                    <text class="text_top">{{errtextall?' ':filter.cmbcStatus('textTwo',cmbcdata.status)}}</text>
+                </view>
+            </view>
+        </view>
+
+        <view class="comm_c_b" wx:if="{{cmbcdata.status=='SUCCESS'}}">
+            <view class="comm_box">
+                <view class="cmbcAcc_box">
+                    <view class="cmbc_no_box">
+                        <text class="no_text">您的民生银行II类电子账户账号</text>
+                        <text class="no_text_two"  data-text="{{cmbcdata.cardNo}}" bindtap="copyText">{{cmbcdata.cardNo}}</text>
+                    </view>
+                    <view class="cmbc_no_box">
+                        <text class="no_text">您的民生联名卡积分余额</text>
+                        <text class="no_text_two">0积分</text>
+                    </view>
+                    <view class="cmbc_btn_box">
+                        <view class="cmbc_btn_two cmbc_btn_two_l" bindtap="checkAccounts">查看账户</view>
+                        <view class="cmbc_btn_two" bindtap="goTransfer">去转账</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="comm_c_b" wx:if="{{cmbcdata.status!='SUCCESS'}}">
+            <view class="cmbcAcc_box">
+                <view class="cmbc_btn_box">
+                    <view class="comm_box_allbtn sub_boxres border_goback comm_msg_btnfal" bindtap="goindex">首页</view>
+                    <view class="comm_box_allbtn sub_boxres  comm_msg_btnTrue" bindtap="goOpenAcc">核实信息</view>
+                </view>
+            </view>
+            <!-- <view class="comm_box_allbtn sub_box comm_msg_btnTrue" bindtap="goindex">首页</view> -->
+        </view>
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="comm_box_bottom"></view>
+                <view class="kindly_reminder" wx:if="{{cmbcdata.status=='SUCCESS'}}">
+                    <text class="kinRtop">温馨提示</text>
+                    <text class="kinRcenter">1. 民生联名卡账户绑定微信支付后，在线下微信扫码支付时，使用民生联名卡账户支付即可使用积分消费；</text>
+                    <text class="kinRcenter">2. 积分支付时，支付额需小于等于账户积分余额；</text>
+                    <text class="kinRcenter">3. 乐益通积分可以在各积分账户间相互转账；</text>
+                </view> 
+                <view class="kindly_reminder" wx:else>
+                    <text class="kinRtop">开户异常原因提示</text>
+                    <text class="kinRcenter">1. 证件信息上传有误。</text>
+                    <text class="kinRcenterkid">（1）此提示可能因您证件信息上传时，规格不符，请参照页面示例拍照重新上传；</text>
+                    <text class="kinRcenterkid">（2）将身份证置于采集区域，对齐边缘，保证光线柔和，照片无反光；</text>
+                    <text class="kinRcenter">2. 证件号码信息有误，请到民生银行网点更新证件信息。</text>
+                    <text class="kinRcenterkid">（1）此提示可能因您填写的身份信息与您之前在银行网点留存的身份信息不一致，请您携带本人有效身份证至民生银行网点柜台统一证件号码；</text>
+                    <text class="kinRcenterkid">（2）请注意15位身份证与18位身份证之分；</text>
+                    <text class="kinRcenter">3. 身份检查未通过，请携带本人有效证件前往任一民生银行网点柜台重新核实身份。</text>
+                    <text class="kinRcenterkid">（1）此提示可能因您填写的身份信息与您之前在银行网点留存的身份信息不一致，请您携带本人有效身份证至民生银行网点柜台统一证件号码；</text>
+                    <text class="kinRcenterkid">（2）请注意15位身份证与18位身份证之分；</text>
+                    <text class="kinRcenter">4. 工作单位填写非法（职业非8且工作单位上送无，或者工作单位全数字字母等情况）。</text>
+                    <text class="kinRcenterkid">（1）此提示可能因您开户时填写的工作单位信息不全或无法识别所致，请返回重新开户填写即可；</text>
+                    <text class="kinRcenter">5. 您已在证件过期暂停非柜面业务名单中，不能办理此业务。</text>
+                    <text class="kinRcenterkid">（1）此提示可能因您绑卡的一类账户银行留存证件信息过期所致，请将一类账户信息进行更新；</text>
+                    <text class="kinRcenterkid">（2）或因为上传的证件信息已经过期，请更换新证件后重新上传；</text>
+                    <text class="kinRcenter">6. 地址信息填写有误：街道长度不符合规范</text>
+                    <text class="kinRcenterkid">（1）此提示可能因您开户时填写的地址信息不全或无法识别所致；</text>
+                    <text class="kinRcenterkid">（2）地址填写不能为全数字或全字母；不能小于12字节（约6个汉字）；</text>
+                    <text class="kinRcenter">7. 其他开户异常请联系客服。</text>
+                </view> 
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+        <view class="kf_box" bindtap="contactSupport">
+            <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+            <text class="kf_text">联系客服</text>
+        </view>
+    </view>
+</view>

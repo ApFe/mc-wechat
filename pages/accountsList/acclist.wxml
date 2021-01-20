@@ -1,0 +1,33 @@
+<!--pages/accountsList/acclist.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="accList_box comm_box_height">
+    <view class="comm_two_centerBox comm_box_height">
+        <view class="comm_c_b padding_bottom40">
+            <view class="comm_box"wx:if="{{accListTorF}}">
+                <view class="acc_list_change"  bindtap="changeType" >
+                    <text class="change_text">{{accTyoeNam}}</text>
+                    <image class="down_img" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/down_img.png"></image>
+                </view>
+                <view class="acc_listbox" bindtap="goAccLDetail" wx:for="{{acctListArr}}" wx:key="id" data-itemlist="{{item}}">
+                    <view class="acc_list_l">
+                        <text class="l_a_one_l">{{item.tradeType}}</text>
+                        <text class="l_a_one_r">{{item.direction=='OUT'?'-':'+'}}{{item.amount}}</text>
+                    </view>
+                    <view class="acc_list_r">
+                        <text class="l_a_two_l">{{filter.cardsType(item.card.type)}}</text>
+                        <text class="l_a_two_r">{{item.paidAt}}</text>
+                    </view>
+                </view>
+                <view class="comm_box_bottom"></view>
+                <view class="overCommon" wx:if="{{show}}">--------------------------------已经到底了--------------------------------</view>
+            </view>
+            <view class="comm_box" wx:else>
+                <view class="no_accList_box">
+                    <image   class="no_accList_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/no_accList_icon.png"></image>
+                    <text class="no_accList_text">暂无记录</text>
+                </view>
+            </view>
+        </view>
+    </view>        
+</view>
+<mp-actionSheet bindactiontap="btnClick" show="{{showActionsheetAl}}" actions="{{groups}}" title="{{chosTitle}}"></mp-actionSheet>

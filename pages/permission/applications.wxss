@@ -1,0 +1,14 @@
+/* pages/permission/applications.wxss */
+.explainmsg{
+    font-size: 24rpx;
+    line-height: 2.5;
+    color:#d7000f;
+}
+.styleText{
+    font-size: 32rpx;
+    line-height: 2;
+}
+.styleheight{
+    min-height: 80rpx;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+}

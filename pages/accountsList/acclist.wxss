@@ -1,0 +1,62 @@
+/* pages/accountsList/acclist.wxss */
+.acc_listbox{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 592rpx;
+    height: 135rpx;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    color: rgb(177, 177, 177);
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+}
+.accList_box .acc_list_l{
+    font-size: 30rpx;
+    color: rgb(104, 104, 104);
+}
+.accList_box .acc_list_r{
+    font-size: 24rpx;
+}
+.accList_box .acc_list_l,.acc_list_r{
+    width: 100%;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.accList_box .acc_list_change{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 592rpx;
+    height: 88rpx;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    color: #fbb944;
+    font-size: 30rpx;
+    box-sizing: border-box;
+}
+.accList_box .acc_list_change .down_img{
+    width: 34rpx;
+    height: 21rpx;
+    margin-left: 21rpx;
+}
+.accList_box .no_accList_box{
+    padding-top: 200rpx;
+    padding-bottom: 480rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.accList_box .no_accList_img{
+    width: 212rpx;
+    height: 151rpx;
+}
+.accList_box .no_accList_text{
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 161rpx;
+    line-height: 161rpx;
+}

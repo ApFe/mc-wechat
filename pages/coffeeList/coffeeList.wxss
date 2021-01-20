@@ -1,0 +1,110 @@
+/* pages/coffeeList/coffeeList.wxss */
+.coffee_box .coffee_box_two{
+    background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/coffee_bg_icon.png) no-repeat 0 -100rpx;
+    background-size: 100%;
+}
+.coffee_box .talImg{
+    width: 300rpx;
+    height: 300rpx;
+}
+.coffee_title{
+    padding-top: 17rpx;
+    width: 96%;
+    height: 87rpx;
+    display: flex;
+    align-items: center;
+}
+.coffee_logo{
+    width: 80rpx;
+    height: 80rpx;
+}
+.coffee_title_text{
+    font-size: 32rpx;
+    color: rgb(32,40,115);
+}
+.coffee_coupon_list{
+    width:636rpx;
+    height: 178rpx;
+    background:url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/coffee/coffee_luck_bg01.png) no-repeat ;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24rpx;
+}
+.pos_sell{
+    position: relative;
+    transform: scale(1,1);
+}
+.pos_fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:636rpx;
+    height: 178rpx;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.pos_fixed_img{
+    width:636rpx;
+    height: 178rpx;
+}
+.coffee_p_t{
+    font-size: 30rpx;
+    color: rgb(255,255,255);
+    padding-left: 136rpx;
+    flex: 1;
+}
+.coupon_price{
+    font-size: 95rpx;
+    padding: 0 14rpx;
+}
+.coupon_rmb{
+    font-size: 35rpx;
+}
+.coffee_piont{
+    width: 166rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coffee_piont .jf_point{
+    font-size: 27rpx;
+    height: 48rpx;
+    border-bottom: 1rpx dashed rgb(255,255,255);
+    box-sizing: border-box;
+    color:rgb(255,255,255);
+}
+.coffee_piont .jf_point .jf{
+    font-size: 23rpx;
+}
+.go_coffee{
+    width: 117rpx;
+    height: 38rpx;
+    font-size: 21rpx;
+    color: rgb(32,40,115);
+    border-radius:19rpx;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 38rpx;
+    margin-top: 12rpx;
+}
+.coffee_illustration{
+    width: 636rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coffee_illustration .ttle_little{
+    width: 596rpx;
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+	text-align:justify;
+	text-justify:distribute-all-lines; 
+}
+.coffee_illustration .ttle_one_w{
+    width: 596rpx;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 102rpx;
+    line-height: 102rpx;
+}

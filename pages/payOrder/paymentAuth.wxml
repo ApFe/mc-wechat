@@ -1,0 +1,53 @@
+<!--pages/payOrder/paymentAuth.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height payment_box">
+    <view class="comm_box_height {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+        <view class="common_top_fix color_top_fix {{windowIsBang?'common_fixed90':'common_fixed45'}}">
+            <image catchtap="backBtn"  class="img_null_login padding_left" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/back_icon.png"></image>
+            <text class="ttle_name_login">支付确认</text>
+            <text class="img_null_login padding_right"></text>
+        </view>
+        <view class="comm_c_b nav_padding_top90">
+            <view class="comm_box">
+                <view class="pam_top_i">
+                    <text class="top_i_text">订单编号：{{items[0].tradeNo}}</text>
+                    <!-- <text class="top_i_text">支付积分</text> -->
+                    <text class="top_i_int">{{point}}积分</text>
+                    <view class="top_i_texttwo">订单剩余<text style="color:#cb2d44">{{hhh+'时'+mmm+'分'+sss+'秒'}}</text>自动关闭</view>
+                </view>
+            </view>
+            <view class="comm_box">
+                <text class="pam_ttle">请选择支付账户</text>
+                <radio-group class="radio-group" bindchange="radioChange">
+                    <radio class="radio" wx:for="{{payaccList.cards}}" wx:for-item='item' wx:key="name" disabled="{{item.balance-point>=0?false:true}}" value="{{item.balance}}#{{item.cardNo}}" checked="{{item.checked}}" color="#fbb944">
+                        <view class="pam_top_iier">
+                            <text class="top_i_texter">{{filter.cardsType(item.type)}}{{item.type=='WEB'?filter.numberToFixed(item.loginName,'12'):item.type=='NAME'?filter.numberToFixed(item.nameCardNo,'12'):item.type=='MINSHENG_NAME'?filter.numberToFixed(item.nameCardNo,'12'):filter.numberToFixed(item.mobile,'12')}}{{}}</text>
+                            <text class="top_i_inter">{{item.balance}}积分</text>
+                        </view>
+                    </radio>
+                </radio-group>
+                <view class="comm_box_allFbtn {{payments?'pamsTb_box pamsb_box':'pamsb_box'}}" bindtap="submitPam">确认支付</view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{pammsgboxshow}}">
+        <view class="al_m_box">
+            <view class="al_ms_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">积分支付确认</text>
+                <image catchtap="pamclosesmgsend"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <text class="explain">使用乐益通积分支付需要短信确认</text>
+            <text class="top_i_text">使用积分</text>
+            <text class="top_i_int">{{point}}</text>
+            <text class="explain_phone">短信验证码已发送至：{{filter.numberToFixed('12','SIMPLE',{mobile:mobileuser})}}</text>
+            <view class="in_msg_code">
+                <input type="text" class="msg_code_inp" maxlength="6" bindinput="paySendInput" placeholder="输入验证码" placeholder-style="color:#B1B1B1;" type="number" />
+                <view class="time_s" wx:if="{{counttime!='重新发送'}}">{{counttime}}s</view>
+                <view class="time_s" catchtap="smgsend" wx:else>{{counttime}}</view>
+            </view>
+            <view class="{{msgcodeinplength!=6?'comm_msg_btn comm_msg_btnfal':'comm_msg_btn comm_msg_btnTrue'}}" catchtap="pamsendSess">确认</view>
+        </view>
+    </view>
+</view>

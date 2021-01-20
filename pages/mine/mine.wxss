@@ -1,0 +1,220 @@
+/* pages/mine/mine.wxss */
+.mine_box{
+    height: 100%;
+    background-color: rgb(248,248,248);
+}
+.mine_box .centerBox{
+    padding-top: 90rpx;
+    background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/back@3x.png) no-repeat top;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mine_box .mine_top{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mine_box .mine_top .boldll{
+    width: 114rpx;
+    height: 114rpx;
+    margin-top: 39rpx;
+    margin-bottom: 28rpx;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.mine_box .mine_top .topImg{
+    width: 114rpx;
+    height: 114rpx;
+}
+.mine_box .mint_t_tt{
+    font-size: 28rpx;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 16rpx;
+}
+.mine_box .min_all_jf,.min_sol_jf{
+    width: 672rpx;
+    min-height: 312rpx;
+    border-radius: 30rpx;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    margin: 12rpx;
+    /* box-shadow: 0 0 10rpx 10rpx rgba(248, 245,239, 0.9); */
+}
+.mine_box .min_sol_jf{
+    margin-bottom: 24rpx;
+}
+.mine_box .sol_jf_top,.all_jf_top{
+    height: 110rpx;
+    display: flex;
+}
+
+.mine_box .all_jf_top .mina_t_tt,.sol_jf_top .mina_t_tt{
+    font-size: 30rpx;
+    height: 110rpx;
+    line-height: 110rpx;
+    color: rgb(251, 185,68);
+}
+.mine_box .all_jf_center{
+    text-align: center;
+    width: 591rpx;
+    padding-bottom: 32rpx;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    margin: 0 auto;
+}
+.mine_box .all_jf_center .jf_c_t{
+    font-size: 22rpx;
+    color: rgb(104, 104,104);
+    margin-right: 12rpx;
+}
+.mine_box .all_jf_center .jf_c_tt{
+    font-size: 64rpx;
+    color:rgb(104, 104,104);
+    font-weight: bold;
+}
+.mine_box .all_jf_tab{
+    width: 591rpx;
+    display: flex;
+    margin: 21rpx auto;
+}
+.mine_box .all_jf_tab .jf_tab{
+    width: 50%;
+    height: 46rpx;
+    line-height: 46rpx;
+    font-size: 30rpx;
+    text-align: center;
+    
+}
+.mine_box .all_jf_tab .tab_l{
+    color: rgb(80,134,200);
+    box-sizing: border-box;
+    border-right: 1rpx solid rgb(216, 216, 216);
+}
+.mine_box .all_jf_tab .tab_r{
+    color: rgb(203,45,68);
+}
+.mine_box .jf_topImg{
+    width: 50rpx;
+    height: 50rpx;
+    margin: 30rpx 20rpx;
+}
+.mine_box .sol_jf_center{
+    width: 591rpx;
+    padding: 32rpx 0;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    margin: 0 auto;
+    display: flex;
+}
+.mine_box .acc_num{
+    display: flex;
+    flex-direction: column;
+    font-size: 32rpx;
+    line-height: 1;
+}
+.mine_box .acc_num_l{
+    flex: 0.5;
+    padding-left: 44rpx;
+}
+.mine_box .acc_num_r{
+    padding-left: 60rpx;
+    flex: 0.5;
+}
+.mine_box .acc_num_nam{
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: rgb(153, 153, 153);
+}
+.mine_box .sol_jf_tab{
+    font-size: 28rpx;
+    border-bottom-right-radius: 30rpx;
+    border-bottom-left-radius: 30rpx;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-height: 60rpx;
+}
+.mine_box .bind_tab{
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+    color: #ffffff;
+}
+.mine_box .del_tab{
+    color: rgb(153, 153, 153);  
+}
+.mine_box .add_acc{
+    width: 504rpx;
+    height: 79rpx;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+    color: #ffffff;
+    font-size: 32rpx;
+    line-height: 79rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40rpx;
+    margin: 100rpx 0;
+}
+.mine_box .add_accImg{
+    width: 34rpx;
+    height: 34rpx;
+    margin-right: 15rpx;
+}
+.mine_box .acc_type_box{
+    height: 110rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mine_box .goacc_type_box{
+    height: 110rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    padding-right: 24rpx;
+}
+.go_cmbccard{
+    width: 40rpx;
+    height: 40rpx;
+}
+.hit_box{
+    justify-content: center;
+    align-items: center;
+    min-height: 139rpx !important;
+}
+.hit_smle_box{
+    width: 592rpx;
+    align-items: center;
+    padding-bottom: 16rpx;
+}
+.hit_text{
+    height: 36rpx;
+    line-height: 36rpx;
+    font-size: 26rpx;
+    color: rgb(177,177,177);
+    margin-left: 12rpx;
+}
+.hit_Img{
+    height: 54rpx;
+    width: 54rpx;
+}
+.go_open_cmbc{
+    color: rgb(82,109,226);
+}
+.mine_box .acc_type{
+    display: inline-block;
+    border-radius: 15rpx;
+    background-color: rgb(251,185,68);
+    color: #ffffff;
+    font-size: 18rpx;
+    padding: 0 12rpx;
+    height: 31rpx;
+    line-height: 31rpx;
+    margin-left: 20rpx;
+}

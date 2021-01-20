@@ -1,0 +1,64 @@
+<!--openCard/pages/cmbcClose/closeAccount.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="closeAcc_res comm_box_height">
+    <view class="comm_box_height {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+        <view class="common_top_fix color_top_fix {{windowIsBang?'common_fixed90':'common_fixed45'}}">
+            <text class="img_null_login padding_left"></text>
+            <text class="ttle_name_login">销户结果</text>
+            <text class="img_null_login padding_right"></text>
+        </view>
+        <view class="comm_c_b nav_padding_top90">
+            <view class="comm_box">
+                <view class="openAccRlt_top {{cmbcdata.status=='00'?'':'status_w'}}">
+                    <image class="oar_topImg" mode="aspectFit" src="{{filter.cmbcStatus('closeimg',cmbcdata.status)}}"></image>
+                    <view class="oar_t_tt_tw">{{cmbcdata.status=='00'?'销户成功':'销户处理中'}}</view>
+                    <!-- <view class="od_t_tt_tw">{{filter.enuStatus(orderDetail.status)}}</view> -->
+                </view>
+                <view class="sess_text">
+                    <text class="text_top" wx:if="{{cmbcdata.status=='00'}}">亲爱的用户</text>
+                    <text class="text_top" wx:else>您的销户申请已提交，</text>
+                    <text class="text_top">{{cmbcdata.status=='00'?'您已成功销户。':'系统正在处理中，请稍后查看结果。'}}</text>
+                </view>
+            </view>
+        </view>
+
+        <!-- <view class="comm_c_b" wx:if="{{cmbcdata.status=='SUCCESS'}}">
+            <view class="comm_box">
+                <view class="cmbcAcc_box">
+                    <view class="cmbc_no_box">
+                        <text class="no_text">您的民生银行II类电子账户账号</text>
+                        <text class="no_text_two">{{cmbcdata.cardNo}}</text>
+                    </view>
+                    <view class="cmbc_no_box">
+                        <text class="no_text">您的民生联名卡积分余额</text>
+                        <text class="no_text_two">0积分</text>
+                    </view>
+                    <view class="cmbc_btn_box">
+                        <view class="cmbc_btn_two cmbc_btn_two_l" bindtap="checkAccounts">查看账户</view>
+                        <view class="cmbc_btn_two" bindtap="goTransfer">去转账</view>
+                    </view>
+                </view>
+            </view>
+        </view> -->
+        <view class="comm_c_b" wx:if="{{cmbcdata.status!='SUCCESS'}}">
+            <view class="comm_box_allbtn sub_box comm_msg_btnTrue" bindtap="goindex">首页</view>
+        </view>
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="comm_box_bottom"></view>
+                <view class="kindly_reminder">
+                    <text class="kinRtop">注销电子账户说明:</text>
+                    <text class="kinRcenter">1. 当电子账户货币余额全部提现前，不可销户；</text>
+                    <text class="kinRcenter">2. 当民生联名卡尚有积分，注销账户后，剩余积分系统将自动转入简易积分账户；</text>
+                    <text class="kinRcenter">3. 销户申请一经提交，则不可撤销，请谨慎操作。</text>
+                </view> 
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+        <view class="kf_box" bindtap="contactSupport">
+            <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+            <text class="kf_text">联系客服</text>
+        </view>
+    </view>
+</view>
+

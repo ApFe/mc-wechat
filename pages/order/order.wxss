@@ -1,0 +1,126 @@
+/* pages/order/order.wxss */
+.order_list_box .order_list_top{
+    height: 72rpx;
+    width: 591rpx;
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    display: flex;
+}
+.order_list_box .order_list_btom{
+    height: 72rpx;
+    width: 591rpx;
+    display: flex;
+    align-items: center;
+}
+.order_list_box .od_topImg{
+    height: 33rpx;
+    width: 31rpx;
+    margin: 19.5rpx 6rpx;
+}
+.order_list_box .od_t_tt{
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 24rpx;
+    color:rgb(104, 104, 104);
+    flex: 1;
+}
+.order_list_box .od_t_tt_tw{
+    font-size: 24rpx;
+    color: #f9ca00;
+    height: 72rpx;
+    line-height: 72rpx;
+}
+.order_list_box .order_c_box{
+    height: 208rpx;
+}
+.order_list_box .od_detailImg{
+    width: 123rpx;
+    height: 123rpx;
+    margin-right: 36rpx;
+    border-radius: 15rpx
+}
+.order_list_box .ttle_od_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.order_list_box .ttle_od_box .od_tex_one{
+    font-size: 28rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+}
+.order_list_box .ttle_od_box .od_tex_two{
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(177, 177, 177);
+}
+.order_list_box .order_c_box .cunt_num{
+    width: 30rpx;
+    font-size: 24rpx;
+    color: rgb(104, 104, 104);
+}
+.order_list_box .bb_tt{
+    color: rgb(82, 109, 226);
+}
+.order_list_box .b_teo_t{
+    color: rgb(177, 177, 177);
+}
+.order_list_box .od_t_tt_tw_b{
+    font-size: 24rpx;
+    width: 129rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    border-radius: 24rpx;
+    text-align: center;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+    color: #ffffff;
+}
+.order_list_box .od_t_tt_tw_b_d{
+    font-size: 24rpx;
+    width: 129rpx;
+    height: 48rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24rpx;
+    margin-right:14rpx;
+    border: 2rpx solid rgb(250,159,0);
+    color: rgb(250,159,0);
+    box-sizing: border-box;
+}
+.order_list_box .noorder_list_box{
+    padding-top: 180rpx;
+    padding-bottom: 384rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.order_list_box .no_order_img{
+    width: 153rpx;
+    height: 194rpx;
+}
+.order_list_box .no_order_text{
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-top: 16rpx;
+}
+.order_list_box .no_order_text_tow{
+    font-size: 24rpx;
+    color: rgb(177, 177, 177);
+}
+.order_list_box .no_order_shop{
+    width: 130rpx;
+    height: 48rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24rpx;
+    border:2rpx solid rgb(251, 185, 68);
+    box-sizing: border-box;
+    font-size: 24rpx;
+    color: rgb(251, 185, 68);
+    margin-top: 64rpx;
+}

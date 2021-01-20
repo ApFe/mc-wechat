@@ -1,0 +1,65 @@
+<!--pages/payOrder/payOrder.wxml-->
+<view class="comm_box_height payorder_box">
+    <view class="comm_box_height">
+        <view class="comm_c_b">
+            <view class="payorder_comm_box">
+                <view class="box">
+                    <image class="payorder_Img" mode="aspectFit" src="{{paygoodsDetail.icon}}"></image>
+                    <view class="pay_text_box">
+                        <view class="gl_text_all">
+                            <text class="g_l_text_one">{{paygoodsDetail.title}}</text>
+                            <text class="g_l_text_two">温馨提示：本商品不支持退换货</text>
+                            <view class="g_l_text_btn_box">
+                                <text class="g_l_text_btn_one">{{paygoodsDetail.point}}积分</text>
+                                <text class="g_l_text_btn_two">x1</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="gl_ttle_text"> 
+                    <text class="gl_ttle_text_one">共 1 件商品，合计：</text>
+                    <text class="gl_ttle_text_two">{{paygoodsDetail.point}}积分</text>
+                </view>
+                <!-- <view class="tishi">
+                    <image class="tishi_Img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/tishiicon.png"></image>
+                    <text class="ts_txt">温馨提示：本商品不支持退换货</text>
+                </view> -->
+            </view>
+        </view>
+        <!--<view class="comm_c_b">
+             <view class="comm_box">
+                <view class="comm_list_text">
+                    <text class="payorder_one_text">积分总额</text>
+                    <text class="payorder_two_text">10000</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="payorder_one_text">优惠券</text>
+                    <text class="payorder_two_text">></text>
+                </view>
+                <view class="comm_box_bottom"></view>
+             </view>    
+            <view class="comm_box">
+                <view class="comm_list_text">
+                    <text class="payorder_one_text">商品金额</text>
+                    <text class="payorder_two_text">¥{{paygoodsDetail.denomination}}.00</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="payorder_one_text">优惠券</text>
+                     <text class="payorder_two_text">-¥0.00</text>
+                </view>
+                <view class="comm_list_text">
+                    <text class="payorder_one_text">运费</text>
+                     <text class="payorder_two_text">-¥0.00</text>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view> -->
+        <view class="comm_flex_box">
+            <view class="payoo_box">
+                <text class="t_one">支付积分：</text>
+                <text class="t_two">{{paygoodsDetail.point}}积分</text>
+            </view>
+            <view class="btn_pay_order {{gopayMsgt?'clos_btn':'ture_btn'}}" bindtap="gopayMsg">提交订单</view>
+        </view>
+    </view>
+</view>

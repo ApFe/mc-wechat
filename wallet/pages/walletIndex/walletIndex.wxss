@@ -1,0 +1,88 @@
+/* wallet/pages/walletIndex/walletIndex.wxss */
+.remainingsumBox{
+    min-height: 560rpx;
+}
+.remainingsumBox_top{
+    display: flex;
+    width: 100%;
+    margin-top: 43rpx;
+}
+.cmbc_sum_img_box{
+    margin-top: 23rpx;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blank_sum{
+    min-width: 180rpx;
+    height: 47rpx;
+}
+.blank_sum_t_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 24rpx;
+    border-top-left-radius: 24rpx;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+}
+.blank_sum_img{
+    margin-left: 22rpx;
+    width: 31rpx;
+    height: 26rpx;
+}
+.blank_sum_text{
+    color: rgb(255,255,255);
+    font-size: 24rpx;
+    margin: 0 13rpx;
+}
+.cmbc_sum_center{
+    flex: 1;
+    width: 591rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.cmbc_sum_c_cen{
+    color: rgb(121,121,121);
+    font-size: 28rpx;
+}
+.cmbc_sum_c_cen_bottom{
+    color: rgb(82,109,226);
+    font-size: 38rpx;
+    margin-top: 35rpx;
+}
+.just_btwn{
+    margin-top: 16rpx;
+    justify-content: space-between;
+}
+.remaining_sum_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rpx;
+    margin-bottom: 40rpx;
+}
+.remaining_sum_btn .kong_box{
+    width: 65rpx;
+    height: 68rpx;
+}
+.remaining_sum_btn .res_btn{
+    width:249rpx;
+    height: 68rpx;
+    border-radius: 34rpx;
+    color: #ffffff;
+    font-size: 28rpx;
+    line-height: 68rpx;
+    text-align: center;
+    color:#f9ca00;
+}
+.remaining_sum_btn .r_btn_l{
+    border: 2rpx solid #f9ca00;
+    box-sizing: border-box;
+}
+.remaining_sum_btn .r_btn_r{
+    color:#ffffff;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+}

@@ -1,0 +1,31 @@
+/* pages/start/lytprotocol.wxss */
+.lytprotocol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lytprotocol .ttle_one_w {
+    width: 90%;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 102rpx;
+    line-height: 102rpx;
+}  
+.lytprotocol .ttle_one_w2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.lytprotocol .ttle_little {
+    text-indent:48rpx;
+    width:90%;
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+    display: block;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+
+}
+    

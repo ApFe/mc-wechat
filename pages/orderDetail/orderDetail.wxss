@@ -1,0 +1,119 @@
+/* pages/orderDetail/orderDetail.wxss */
+.orderDetail_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.orderDetail_box .order_detail_top{
+    height: 100rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 40rpx;
+    border-top-right-radius: 40rpx;
+}
+.orderDetail_box .order_detail_bottom{
+    height: 100rpx;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 40rpx;
+    border-bottom-right-radius: 40rpx;
+    font-size: 24rpx;
+    color:rgb(104,104,104);
+}
+.orderDetail_box .t_red{
+    color:rgb(203,45,68);
+}
+.orderDetail_box .od_topImg{
+    height: 33rpx;
+    width: 33rpx;
+    margin-left: 40rpx;
+    margin-right: 16rpx;
+}
+.orderDetail_box .od_t_tt_tw{
+    flex: 1;
+    font-size: 30rpx;
+    color: #ffffff;
+    height: 72rpx;
+    line-height: 72rpx;
+}
+.orderDetail_box .order_d_c_box{
+    height: 200rpx;
+    border-bottom: 0rpx dashed rgb(216, 216, 216);
+}
+.orderDetail_box .od_detailImg{
+    width: 123rpx;
+    height: 123rpx;
+    margin-right: 36rpx;
+}
+.orderDetail_box .ttle_od_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+.orderDetail_box .ttle_od_box .od_tex_one{
+    font-size: 28rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+}
+.orderDetail_box .ttle_od_box .od_tex_two{
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(82, 109, 226);
+}
+.orderDetail_box .order_c_box .cunt_num{
+    width: 30rpx;
+    font-size: 24rpx;
+    color: rgb(104, 104, 104);
+}
+.orderDetail_box .o_d_right_one{
+    color: rgb(82, 109, 226);
+}
+.orderDetail_box .o_d_right{
+    color: rgb(104, 104, 104);
+}
+.orderDetail_box .btom_or_d_fix{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 97rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+.orderDetail_box .right_btom_or{
+    display: flex;
+    align-items: center;
+}
+.orderDetail_box .left_btom_or{
+    margin-left: 39rpx;
+    color: rgb(177,177,177);
+    font-size: 24rpx;
+}
+.orderDetail_box .pay_text_or{
+    font-size: 28rpx;
+    color: rgb(82, 109, 226);
+}
+.orderDetail_box .fix_btn{
+    width: 144rpx;
+    height: 54rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+    border-radius: 27rpx;
+    margin: 0 9rpx;
+    border: 2rpx solid rgb(250,159,0);
+    color: rgb(250,159,0);
+    box-sizing: border-box;
+}
+.orderDetail_box .fix_btn:last-child{
+    margin-right: 39rpx;
+    color: #ffffff;
+    border: none;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+}

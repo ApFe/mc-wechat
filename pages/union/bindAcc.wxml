@@ -1,0 +1,37 @@
+<!--pages/union/bindAcc.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height bindAcc_box">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <view class="sol_jf_top">
+                    <image class="jf_topImg" mode="aspectFit" src="{{bindType=='WEB'?'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/1000@3x.png':bindType=='NAME'?'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/2000@3x.png':'https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/5000@3x.png'}}"></image>
+                    <view class="mina_t_tt">{{filter.cardsType(bindType)}}{{filter.numberToFixed(accnoOrloginNam,'12')}}</view>
+                </view>
+                <view class="comm_box_center_o">
+                    <text class="comm_box_c_ttle">{{bindType=='WEB'?'登录名':bindType=='NAME'?'联名卡号':'手机号'}}</text>
+                    <input class="comm_box_c_ttle_two" wx:if="{{bindType=='WEB'}}" type="text" bindinput="bindAccInput" placeholder="{{bindType=='WEB'?'请输入登录名':bindType=='NAME'?'请输入联名卡号':'请输入手机号'}}" placeholder-style="color:#B1B1B1;" />
+                    <input class="comm_box_c_ttle_two" wx:else type="number" bindinput="bindAccInput" placeholder="{{bindType=='WEB'?'请输入登录名':bindType=='NAME'?'请输入联名卡号':'请输入手机号'}}" placeholder-style="color:#B1B1B1;" />
+                </view>
+                
+                <view class="comm_box_center_o">
+                    <text class="comm_box_c_ttle">证件号码</text>
+                    <input class="comm_box_c_ttle_two" type="text" bindinput="bindidCarInput" placeholder="请输入证件号码" placeholder-style="color:#B1B1B1;" />
+                </view>
+                 <view class="comm_box_center_o add_acctext">
+                    <text class="comm_box_c_ttle">验证码</text>
+                    <input class="comm_box_c_ttle_two" type="number" maxlength="6"  bindinput="smsInput" placeholder="请输入短信验证码" placeholder-style="color:#B1B1B1;" />
+                    <text class="add_acctext_smg" bindtap="sendBindmsg">{{counttime=='获取验证码'?counttime:counttime=='重新发送'?counttime:counttime+'s'}}</text>
+                </view>
+                <view class="add_msg_text" wx:if="{{mobileshow}}">短信验证码已发送至{{filter.numberToFixed('12','SIMPLE',{mobile:mobile})}}</view>
+                <view class="add_msg_text" wx:else></view>
+                <view class="comm_box_allbtn sub_box {{message?'comm_msg_btnTrue':'comm_msg_btnfal'}}" bindtap="submitBindBt">绑定</view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+</view>

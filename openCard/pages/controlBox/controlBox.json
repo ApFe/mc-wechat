@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-actionSheet": "../../../components/weui-miniprogram/actionsheet/actionsheet"
+  },
+  "navigationBarTitleText": "设置密码"
+}

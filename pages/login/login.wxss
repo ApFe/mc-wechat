@@ -1,0 +1,60 @@
+/* pages/login/login.wxss */
+.login_btnTop_text{
+    font-size: 28rpx;
+    color: rgb(251, 185, 68);
+    margin-top: 80rpx;
+    margin-bottom: 50rpx;
+}
+.login_topImg{
+    width: 496rpx;
+    height: 291rpx;
+    margin: 28rpx 0;
+}
+.login_btnImg{
+    width: 42rpx;
+    height: 35rpx;
+    margin-right: 26rpx;
+}
+.loginb_box{
+    background: rgb(48, 173, 55);
+    font-size: 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 38rpx;
+}
+.loginb_box_two{
+    background: linear-gradient(to top right,rgb(250,159,0) ,rgb(249,202,0));
+    margin-top: 38rpx;
+    margin-bottom: 76rpx;
+}
+.login_beTure{
+    margin-top: 50rpx;
+    margin-bottom: 33rpx;
+}
+.login_text_smg{
+    font-size: 28rpx;
+    color: rgb(203,45,68);
+    border-left: 2rpx solid rgb(177, 177, 177);
+    box-sizing: border-box;
+    width: 184rpx;
+    text-align: center;
+}
+.login_box_c_ttle{
+    min-width: 90rpx;
+}
+.log_sendmsg{
+    border: none;
+}
+.logo_login_img{
+    width: 314rpx;
+    height: 141rpx;
+    margin-bottom: 64rpx;
+}
+.login_union{
+    font-size: 22rpx;
+    color: rgb(104,104,104);
+}
+.log_un_text{
+    color: rgb(82,109,226);
+}

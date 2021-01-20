@@ -1,0 +1,88 @@
+<!--openCard/pages/virtualBank/virtualBank.wxml-->
+<view class="comm_box_height cmbcvtbigBox">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box cmbcvtBox">
+                <view class="virtualBox_top">
+                    <view class="blank"></view>
+                    <view class="cmbc_img_box">
+                        <image class="cmbclogo_icon" wx:if="{{!changeBtn}}" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/cmbclogo_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    </view>
+                    <view class="blank blank_t_box"  bindtap="changeCard">
+                        <image class="blank_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/cheng_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                        <text class="blank_text">{{changeBtn?'Ⅱ类电子账户':'主卡'}}</text>
+                    </view>
+                </view>
+                <view class="cmbc_center">
+                    <view class="cmbc_c_top">
+                        <text class="cmbc_c_top_o">{{changeBtn?vitualdata.bindBankName:'民生银行 (北京分行) '}}</text>
+                        <text class="cmbc_c_top_t">{{changeBtn?'主卡':'Ⅱ类电子账户'}}</text>
+                    </view>
+                    <text class="cmbc_c_cen"  wx:if="{{!changeBtn}}">户名：{{vitualdata.name}}</text>
+                    <view class="cmbc_c_top">
+                        <text class="cmbc_c_cen">{{changeBtn?vitualdata.bindCardNo:vitualdata.cardNo}}</text>
+                        <image class="copy_icon"  wx:if="{{!changeBtn}}" data-text="{{vitualdata.cardNo}}" bindtap="copyText" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/copy_no_icon.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                    </view>
+                    <!-- <view class="comm_box_center_o just_btwn" wx:if="{{changeBtn}}">
+                        <text class="comm_box_c_ttle_two">单笔限额</text>
+                        <text class="comm_box_c_ttle_twot">{{vitualdata.bindSingleLimit}}</text>
+                    </view>
+                    <view class="comm_box_center_o just_btwn" style="border:none;" wx:if="{{changeBtn}}">
+                        <text class="comm_box_c_ttle_two">每日限额</text>
+                        <text class="comm_box_c_ttle_twot">{{vitualdata.bindDayLimit}}</text>
+                    </view> -->
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="comm_box" wx:if="{{!changeBtn}}">
+                <view class="comm_box_center_o just_btwn" bindtap="changeBindMoble">
+                    <text class="comm_box_c_ttle_two">更换手机号</text>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o just_btwn" bindtap="changePassword">
+                    <text class="comm_box_c_ttle_two">修改电子账户密码</text>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o just_btwn" bindtap="retrievePassword">
+                    <text class="comm_box_c_ttle_two">找回电子账户密码</text>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o just_btwn" bindtap="unlockPassword">
+                    <text class="comm_box_c_ttle_two">电子账户密码解锁</text>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o just_btwn" bindtap="unlockAccount">
+                    <text class="comm_box_c_ttle_two">电子账户解锁</text>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+                <view class="comm_box_center_o just_btwn" style="border:none;" bindtap="closeAcc">
+                    <text class="comm_box_c_ttle_two">销户</text>
+                    <image  class="back_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/back_icon.png"></image>
+                </view>
+            </view>
+            <view class="comm_box_allbtn sub_box  comm_msg_btnTrue" wx:if="{{changeBtn}}" bindtap="changemasterCard">换绑主卡</view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{closebeTrue}}">
+        <view class="al_m_box">
+            <view class="al_beTur_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">温馨提示</text>
+                <image  data-type='close' catchtap="closeAccbeTrue"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <view class="pg_msg">
+                <text class="ttle_one_w">销户说明：</text>
+                <text class="ttle_little">1.当电子账户货币余额全部提现前，不可销户；</text>
+                <text class="ttle_little">2.当民生联名卡尚有积分，注销账户后，剩余积分系统将自动转入简易积分账户；</text>
+                <text class="ttle_little">3.销户申请一经提交，则不可撤销；</text>
+                <text class="ttle_little">4.如上情况请您悉知并谨慎操作；</text>
+                <text class="ttle_little">客服电话：010-59231512</text>
+            </view>
+            <view class="comm_msg_btn comm_msg_btnTrue" data-type='beTrue' catchtap="closeAccbeTrue">我知道了</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,39 @@
+/* wallet/pages/walletrecharge/resultCmbc.wxss */
+.cmbc_result_top_box{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.cmbc_result_box .cmbc_result_img{
+    width: 290rpx;
+    height: 161rpx;
+    margin-left: -22rpx;
+}
+.cmbc_result_text{
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 90rpx;
+    line-height: 90rpx;
+    margin-top: 16rpx;
+}
+.cmbc_result_btn_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cmbc_result_btn{
+    width: 249rpx;
+    height: 68rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 34rpx;
+    color: #ffffff;
+    font-size: 28rpx;
+    margin: 32rpx;
+    margin-top: 34rpx;
+}
+.cmbc_result_btn_color{
+    background: linear-gradient(to top right,rgb(250,159,0) ,rgb(249,202,0));
+}

@@ -1,0 +1,191 @@
+/* pages/refuelcard/refuelcard.wxss */
+.tab .btns{ 
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    font-size: 32rpx;
+}
+
+.tab .btns .com{
+    flex: 1; 
+    text-align: center; 
+    line-height:80rpx;
+    color: rgb(104, 104, 104);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tab .btns .cur{
+    color: #faa200;
+}
+.tab .btns .border_r{
+    border-right: 2rpx solid #d8d8d8;
+    box-sizing: border-box;
+}
+.leng_text{
+    height: 80rpx;
+    width: 50%;
+    line-height:80rpx;
+}
+.chengeText{
+    border-bottom: 4rpx solid #faa200 ;
+    box-sizing: border-box;
+}
+ .curcom{
+    min-height: 40rpx;
+    display: none; 
+}
+
+ .cur{display: block;}
+.ref_input_top{
+    width: 592rpx;
+    height: 108rpx;
+    display: flex;
+    align-items: center;
+}
+.margin_top_30{
+    margin-top: 30rpx;
+}
+.ref_ipnut_nam{
+    font-size: 30rpx;
+    color: rgb(104, 104, 104);
+    margin-right: 40rpx;
+}
+.refCardsList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+.refCardsImg{
+    height: 50rpx;
+    width: 50rpx;
+}
+.refCardsText{
+    color: #faa200;
+    font-size: 16rpx;
+}
+.ref_tal_box .ref_tal_box_two{
+    background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/ref/refuelcard_icon.png) no-repeat 0 -100rpx;
+    background-size: 100%;
+}
+.ref_tal_box .talImg{
+    width: 208rpx;
+    height: 159rpx;
+    margin-bottom: 18rpx;
+}
+.ref_tal_box .rec_tal_iphone{
+    width: 352rpx;
+    height: 108rpx;
+    font-size: 28rpx;
+    color: #686868;
+}
+.ref_tal_box .rec_tal_card{
+    border-bottom: 2rpx dashed rgb(216, 216, 216);
+    box-sizing: border-box;
+}
+.ref_tal_box .rec_tal_change_box{
+    width: 600rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ref_tal_box .rec_tal_change_box .ttle_one{
+    width: 592rpx;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 86rpx;
+    line-height: 86rpx;
+    padding-top: 14rpx;
+}
+.ref_tal_box .rec_tal_change_box .ttle_one_w{
+    width: 592rpx;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 102rpx;
+    line-height: 102rpx;
+}
+.ref_tal_box .change_box{
+    display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+    /* justify-content: space-between; */
+}
+.ref_tal_box .only_one{
+    width: 188rpx;
+    height: 125rpx;
+    font-size: 38rpx;
+    color: rgb(159,159,159);
+    margin: 6rpx;
+    border: 3rpx solid rgb(159,159,159);
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ref_tal_box .ttle_little{
+    width: 592rpx;   
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+}
+.ref_tal_box .chose_only{
+    background-color: #f9ca00;
+    border: 2rpx solid #f9ca00;
+    color: #ffffff;
+}
+.ref_tal_box .only_price{
+    font-size: 22rpx;
+}
+.ref_tal_box .kf_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44rpx;
+    margin-bottom: 28rpx;
+}
+.ref_tal_box .kf_img{
+    width: 38rpx;
+    height: 34rpx;
+    margin-right: 7rpx;
+}
+.ref_tal_box .kf_text{
+    font-size: 24rpx;
+    color: #f9ca00;
+}
+.ref_tal_box .right_s{
+    color: #526de2;
+}
+.ref_tal_box .al_m_b_title{
+    margin-bottom: 26rpx;
+    margin-top: 38rpx;
+}
+.ref_tal_box .btm_re_btn{
+    margin-top: 76rpx;
+    margin-bottom: 49rpx;
+}
+.rdfCard_illustration{
+    width: 636rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rdfCard_illustration .ttle_little{
+    width: 596rpx;
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+	text-align:justify;
+	text-justify:distribute-all-lines; 
+}
+.rdfCard_illustration .ttle_one_w{
+    width: 596rpx;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 102rpx;
+    line-height: 102rpx;
+}

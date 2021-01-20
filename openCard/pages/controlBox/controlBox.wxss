@@ -1,0 +1,35 @@
+/* openCard/pages/controlBox/controlBox.wxss */
+.cmbcer_box .id_text{
+    margin-top: 50rpx;
+    margin-bottom: 30rpx;
+    font-size: 30rpx;
+    color: rgb(251,185,68);
+}
+
+.cmbcer_box .add_acctext_smg{
+    color: rgb(203,45,68);
+    width: 178rpx;
+    border-left: 2rpx solid rgb(177, 177, 177);
+    box-sizing: border-box;
+    text-align: right;
+}
+.cmbcer_box .msg_iphon{
+    margin-top: 38rpx;
+    margin-bottom: 80rpx;
+    font-size: 26rpx;
+    color: rgb(177,177,177);
+    
+}
+.cmbcer_box .add_msg_text{
+    font-size: 28rpx;
+    color: #B1B1B1;
+    height: 102rpx;
+    line-height: 102rpx;
+}
+.cmbcer_box .sub_box{
+    margin-top: 26rpx;
+}
+.just_btwn{
+    margin-top: 16rpx;
+    justify-content: space-between;
+}

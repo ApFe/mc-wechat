@@ -1,0 +1,21 @@
+<!--pages/goodsList/goodsList.wxml-->
+<view class="comm_box_height goodList_box">
+    <view class="comm_box_height">
+        <view class="comm_c_b">
+            <view class="goodlist_comm_box" wx:for="{{listproductsArr}}" wx:key="index" data-code="{{item.code}}" bindtap="goGoodsDetail">
+                <image class="good_listImg" src="{{item.product.icon}}"></image>
+                <view class="g_l_text_box">
+                    <view class="gl_text_all">
+                        <text class="g_l_text_one">{{item.product.title}}</text>
+                        <text class="g_l_text_two">{{item.product.subtitle}}</text>
+                    </view>
+                    <view class="g_l_text_btn_box">
+                        <text class="g_l_intger">{{item.point}}积分</text>
+                        <text class="g_l_btn">立即兑换</text>
+                    </view>
+                </view>
+            </view>
+            <view class="overCommon" wx:if="{{show}}">--------------------------------已经到底了--------------------------------</view>
+        </view>
+    </view>
+</view>

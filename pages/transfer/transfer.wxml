@@ -1,0 +1,125 @@
+<!--pages/transfer/transfer.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="tran_box comm_box_height">
+    <view class="tran_bb_box comm_box_height">
+        <view class="comm_c_b">
+            <view class="comm_box">
+                <text class="comm_box_top_one">转出账户信息</text>
+                <view class="comm_box_center_or">
+                    <view class="comm_box_center_cbo"  bindtap="rollout">
+                        <text class="comm_box_c_ttle">转出账户</text>
+                        <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="text" disabled='true' value="{{rolloutnam}}"  placeholder="请选择转出账户"></input>
+                        <image class="down_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/down_img.png"></image>
+                    </view>
+                    <view class="comm_box_bottom tran_ttle" wx:if="{{rolloutfrom.integral}}">当前账户余额：{{rolloutfrom.integral}}积分</view>
+                </view>
+                
+                <view class="comm_box_center_o">
+                    <text class="comm_box_c_ttle">转赠积分</text>
+                    <input class="comm_box_c_ttle_two"  type="number" bindblur="bindKeyInput" placeholder="请输入转赠积分" value="{{rolloutIntegral}}" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_bottom tran_ttle_t" wx:if="{{rolloutfrom.integral}}">转赠积分不低于100积分</view>
+               <view class="comm_box_bottom" wx:else></view>
+            </view>
+
+            <view class="pont_tba comm_box">
+                <view class="btns">
+                    <view class="{{0==active?'cur com':'com'}}" data-index="0" bindtap="toggle">
+                        <view class="{{0==active?'leng_text chengeText':'leng_text'}}">转赠自己</view>
+                    </view>
+                    <view style="height:56rpx;width:2rpx;background-color:#d8d8d8;margin: 12rpx 0;"></view>
+                    <view class="{{1==active?'cur com':'com'}}" data-index="1" bindtap="toggle">
+                        <view class="{{1==active?'leng_text chengeText':'leng_text'}}">转赠别人</view>
+                    </view>
+                </view>
+                <view class="cons" hover-class="none" hover-stop-propagation="false">
+                    <view class="{{0==active?'cur curcom':'curcom'}}">
+                        <text class="pam_ttle">请选择转赠账户</text>
+                        <radio-group class="radio-group" bindchange="radioChange">
+                            <radio class="radio" wx:for="{{payaccList.cards}}" wx:for-item='item' wx:key="name" value="{{item.type}}#{{item.balance}}#{{item.cardNo}}#{{filter.cardsType(item.type)}}#{{item.type=='WEB'?filter.numberToFixed(item.loginName,'12'):item.type=='NAME'?filter.numberToFixed(item.nameCardNo,'12'):item.type=='MINSHENG_NAME'?filter.numberToFixed(item.nameCardNo,'12'):filter.numberToFixed(item.mobile,'12')}}#{{item.cardholder}}#{{item.type=='WEB'?item.loginName:item.type=='NAME'?item.nameCardNo:item.type=='MINSHENG_NAME'?item.nameCardNo:item.mobile}}" checked="{{item.checked}}" color="#fbb944" wx:if="{{item.type!='WEB'}}">
+                                <view class="pam_top_iier">
+                                    <text class="top_i_texter">
+                                        {{filter.cardsType(item.type)}}{{item.type=='WEB'?filter.numberToFixed(item.loginName,'12'):item.type=='NAME'?filter.numberToFixed(item.nameCardNo,'12'):item.type=='MINSHENG_NAME'?filter.numberToFixed(item.nameCardNo,'12'):filter.numberToFixed(item.mobile,'12')}}
+                                    </text>
+                                    <text class="top_i_inter">积分余额：{{item.balance}}积分</text>
+                                </view>
+                            </radio>
+                        </radio-group>
+                    </view>
+                    <view class="{{1==active?'cur curcom':'curcom'}}">
+                        <text class="pam_ttle">请填写转赠账户信息</text>
+                        <view class="comm_box_center_o" bindtap="rollin">
+                            <text class="comm_box_c_ttle">账户类型</text>
+                            <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="text" disabled='true' placeholder="请选择充值账户类型" placeholder-style="color:#B1B1B1;" value="{{rollinnam}}"></input>
+                            <image class="down_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/down_img.png"></image>
+                        </view>
+                        <view class="comm_box_center_o" wx:if="{{rollinaccType}}">
+                            <text class="comm_box_c_ttle">{{filter.inputTextTop(rollinaccType)}}</text>
+                            <input class="comm_box_c_ttle_two" type="{{rollinaccType=='WEB'?'text':'number'}}" bindblur="rollinAccInput" placeholder="{{filter.inputText(rollinaccType)}}" value="{{rollinaccKey}}" maxlength="{{rollinaccType=='SIMPLE'?'11':rollinaccType=='NAME'?'19':'19'}}" placeholder-style="color:#B1B1B1;" />
+                        </view>
+                        <view class="comm_box_center_o" wx:if="{{rollinaccType=='NAME'||rollinaccType=='MINSHENG_NAME'}}">
+                            <text class="comm_box_c_ttle">持卡人姓名</text>
+                            <input class="comm_box_c_ttle_two" type="text" bindblur="rollinNameInput" placeholder="请输入真实姓名" value="{{rollinaccName}}" placeholder-style="color:#B1B1B1;" />
+                        </view>
+                    </view>
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+
+
+            <view class="comm_box_allbtn {{(active!=0&&rollinaccKey)||(active==0&&payments[0].cardNo)?'comm_msg_btnTrue':'comm_msg_btnfal'}}" bindtap="rollNext">下一步</view>
+            <view class="comm_box_bottom"></view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{showRollBox}}">
+        <view class="al_m_box" wx:if="{{validate}}">
+            <view class="al_beTur_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">请确认账户信息</text>
+                <image catchtap="closrollNext"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <view class="al_m_b_btn re_btn">
+                <text class="left_s">转入账户</text>
+                <text class="right_s">{{active!=0?rollinnam:payments[0].rollinnam}}</text>
+            </view>
+            <view class="al_m_b_btn re_btn">
+                <text class="left_s">{{active!=0?filter.inputTextTop(rollinaccType):filter.inputTextTop(payments[0].type)}}</text>
+                <text class="right_s">{{active!=0?rollinaccKey:payments[0].rollinaccKey}}</text>
+            </view>
+            <view class="al_m_b_btn re_btn" wx:if="{{(active!=0&&rollinaccType!='WEB'&&rollinaccType!='SIMPLE')||(active==0&&payments[0].type!='SIMPLE'&&rollinaccType!='WEB')}}">
+                <text class="left_s">姓名</text>
+                <text class="right_s">{{active!=0?rollinaccName:payments[0].rollinaccName}}</text>
+            </view>
+            <view class="border_dashed mar_btom mar_top"></view>
+            <view class="al_c_b_btn">
+                <text class="c_left_s">转赠积分</text>
+                <text class="c_right_s">{{rolloutIntegral}}</text>
+            </view>
+            <view class="al_m_b_btn re_btn">
+                <text class="left_s">转出账户</text>
+                <text class="right_s">{{rolloutfrom.text}}</text>
+            </view>
+            <view class="comm_msg_btn comm_msg_btnTrue" catchtap="smgsend">确定</view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{msgboxshow}}">
+        <view class="al_m_box">
+            <view class="al_ms_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">短信验证</text>
+                <image catchtap="closesmgsend"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <text class="explain">使用乐益通积分支付需要短信确认</text>
+            <text class="explain_phone">短信验证码已发送至：{{mobile}}</text>
+            <view class="in_msg_code">
+                <input type="text" class="msg_code_inp" maxlength="6" bindinput="rollinSendInput"  placeholder="输入验证码" placeholder-style="color:#B1B1B1;" />
+                <view class="time_s" wx:if="{{counttime!='重新发送'}}">{{counttime}}s</view>
+                <view class="time_s" catchtap="smgsend" wx:else>{{counttime}}</view>
+            </view>
+            <view class="{{captchalength!=6?'comm_msg_btn comm_msg_btnfal':'comm_msg_btn comm_msg_btnTrue'}}" catchtap="sendSess">确认</view>
+        </view>
+    </view>
+    <mp-actionSheet bindactiontap="btnClick" show="{{showActionsheet}}" actions="{{groups}}" title="{{chosTitle}}">
+    </mp-actionSheet>
+</view>
+

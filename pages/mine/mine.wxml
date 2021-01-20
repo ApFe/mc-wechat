@@ -1,0 +1,100 @@
+<!--pages/mine/mine.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="mine_box comm_box_height">
+    <view class="centerBox">
+        <view class="mine_top">
+            <view class="boldll" bindtap="goSetting">
+                <open-data class="topImg" type="userAvatarUrl"></open-data>
+            </view>
+            <open-data  class="mint_t_tt" type="userNickName"></open-data>
+            <view class="mint_t_tt"  bindtap="goSetting">编辑个人设置</view>
+        </view>
+
+        <view class="min_all_jf box_show20">
+            <view class="all_jf_top">
+                <image class="jf_topImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/lyt@3x.png"></image>
+                <view class="mina_t_tt">乐益通账户</view>
+            </view>
+            <view class="all_jf_center">
+                <text class="jf_c_t">当前积分</text>
+                <text class="jf_c_tt">{{acclistArr.totalBalance}}</text>
+            </view>
+            <view class="all_jf_tab">
+                <view class="jf_tab tab_l" bindtap="goAcclist">账户明细</view>
+                <view class="jf_tab tab_l" bindtap="goTransfer">积分转赠</view>
+                <view class="jf_tab tab_r" bindtap="goIntegral">积分充值</view>
+            </view>
+        </view>
+        
+        <view class="min_sol_jf box_show20 hit_box" wx:if="{{!cmbc&&cmbcqualification}}">
+            <view class="sol_jf_top hit_smle_box">
+                <image class="hit_Img" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/cmbc/hint_icon.png"></image>
+                <view class="hit_text">{{openResult?'您的民生联名账户正在审核中，':'你尚未开通民生联名账户，开通民生联名账户，积分可绑定微信、支付宝扫码消费，'}}<text class="go_open_cmbc" data-gourl="{{openResult?'/openCard/pages/openAccResult/openAccResult':'/openCard/pages/opencmbc/guidepage'}}" bindtap="goOpenCmbc">{{openResult?'查看':'去开通'}}>></text></view>
+            </view>
+        </view>
+
+        <view class="min_sol_jf box_show20" wx:if="{{acclistArr.cards}}" wx:for="{{acclistArr.cards}}" wx:key="key" wx:for-item='cards' data-index="{{index}}"  bindtap="delCarshow">
+            <view class="sol_jf_top">
+                <image class="jf_topImg" mode="aspectFit" src="{{filter.cardsLogo(cards.type)}}"></image>
+                <view class="mina_t_tt">{{filter.cardsType(cards.type)}}</view>
+                <view class="acc_type_box" wx:if="{{cards.type!='SIMPLE'&&cards.type!='WEB'}}">
+                    <text class="acc_type">{{filter.accCardType(cards.type)}}</text>
+                </view>
+                <view class="goacc_type_box" wx:if="{{cards.type=='MINSHENG_NAME'}}">
+                    <image bindtap="goCmbc" class="go_cmbccard" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/go_card.png"></image>
+                </view>
+            </view>
+            <view class="sol_jf_center">
+                <view class="acc_num acc_num_l">
+                    <text class="acc_num_no">{{filter.numberToFixed('12',cards.type,{nameCardNo:cards.nameCardNo,loginName:cards.loginName,mobile:cards.mobile})}}</text>
+                    <text class="acc_num_nam">{{filter.cardsttle(cards.type)}}</text>
+                </view>
+                <view class="acc_num acc_num_r">
+                    <text class="acc_num_no">{{cards.balance}}积分</text>
+                    <text class="acc_num_nam">积分余额</text>
+                </view>
+            </view>
+            <view class="sol_jf_center" wx:if="{{cards.type=='MINSHENG_NAME'}}">
+                <view class="acc_num acc_num_l border_r" data-type='cmbcblance' data-accountno="{{cards.accountNo}}" bindtap="goavailableBalance">
+                    <text class="acc_num_no">¥ {{cmbcCard.availableBalance>0?filter.numberToStr(cmbcCard.availableBalance/100,2):'0.00'}}</text>
+                    <text class="acc_num_nam">货币余额</text>
+                </view>
+                <view class="acc_num acc_num_r"  data-type='asonewishes' bindtap="goavailableBalance">
+                    <text class="acc_num_no">¥ 0.00</text>
+                    <text class="acc_num_nam">如意宝</text>
+                </view>
+            </view>
+            <view class="sol_jf_tab del_tab" wx:if="{{cards.deleted&&(cards.type!='SIMPLE'&&cards.type!='MINSHENG_NAME')}}"  data-type="{{cards.type}}" data-loginname="{{cards.loginName}}" data-namecardno="{{cards.nameCardNo}}" data-cardno="{{cards.cardNo}}" catchtap="godeleteAccCar">
+                删除
+            </view>
+            <view class="sol_jf_tab bind_tab" wx:elif="{{!cards.bound&&!cards.deleted}}" data-cardno="{{cards.cardNo}}"  data-type="{{cards.type}}" data-mobile="{{cards.mobile}}" data-loginname="{{cards.loginName}}" data-namecardno="{{cards.nameCardNo}}"  catchtap="goBandAccCar">
+                绑定
+            </view>
+            <view class="sol_jf_tab" wx:else>
+                
+            </view>
+        </view>
+
+        <view class="add_acc" bindtap="goAddAcc">
+            <image class="add_accImg" mode="aspectFit" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/mine/add@3x.png"></image>
+                <view class="add_acc_tt">添加积分账户</view>
+        </view>
+        <view class="kf_box" bindtap="contactSupport">
+            <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+            <text class="kf_text">联系客服</text>
+            <!-- <web-view  /> -->
+        </view>
+    </view>
+    <!-- <view class="commalert_box" wx:if="{{delete}}">
+        <view class="al_m_box">
+            <view class="al_ms_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">账户删除确认</text>
+                <image catchtap="closeDelete"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <text class="explain">您是否确认要删除积分账户</text>
+            <text class="explain warnRed">{{deleteNam=='NAME'?'联名卡账户：':'网站主账户：'}}{{deleteNam=='NAME'?filter.numberToFixed(deleteNo,deleteNam):filter.numberToFixed(deleteNum,deleteNam)}}</text>
+            <view class="comm_msg_btn comm_msg_btnTrue" catchtap="delSess">确认</view>
+        </view>
+    </view> -->
+</view>

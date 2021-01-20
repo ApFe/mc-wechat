@@ -1,0 +1,3 @@
+<!--pages/start/start.wxml-->
+<!-- <text>pages/start/start.wxml</text> -->
+<web-view  src="https://wap.bank.ecitic.com/Msmb/resource/imageText/95b496d0-0c05-43b9-aa86-26025b4420eb.htm"/>

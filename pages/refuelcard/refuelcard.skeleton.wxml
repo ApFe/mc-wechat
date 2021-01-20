@@ -1,0 +1,83 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/11/16 下午4:07:35 
+使用方法：
+在 /Users/lytcitic/Desktop/wechat-mall/pages/refuelcard/refuelcard.wxml 引入模板
+
+```
+<import src="refuelcard.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/lytcitic/Desktop/wechat-mall/pages/refuelcard/refuelcard.wxss 中引入样式
+```
+@import "./refuelcard.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="comm_box_height ref_tal_box">
+      <view class="comm_box_height ref_tal_box_two sk-image">
+        <view class="comm_c_b">
+          <image class="talImg sk-image" lazy-load="true" mode="aspectFit"></image>
+          <view class="tab comm_box">
+            <view class="btns">
+              <view class="cur com" data-index="0">
+                <view class="leng_text chengeText sk-transparent sk-text-30-0000-172 sk-text" style="border: none; background-position-x: 50%;">中石油卡</view>
+              </view>
+              <view style="height:28px;width:1px;background-color:#d8d8d8;margin: 6px 0;"></view>
+              <view class="com" data-index="1">
+                <view class="leng_text sk-transparent sk-text-30-0000-778 sk-text" style="background-position-x: 50%;">中石化卡</view>
+              </view>
+            </view>
+            <view class="cons">
+              <view class="cur curcom">
+                <view class="ref_input_top rec_tal_card margin_top_30" style="border: none;">
+                  <text class="ref_ipnut_nam sk-transparent sk-text-18-7500-134 sk-text">加油卡号</text>
+                  <view class="rec_tal_iphone sk-image" maxlength="16" placeholder="请输入中石油卡16位卡号" placeholder-style="color:#B1B1B1;" type="number"></view>
+                  <view class="refCardsList">
+                    <image class="refCardsImg sk-image"></image>
+                    <text class="refCardsText sk-transparent sk-text-18-7500-521 sk-text">加油卡</text>
+                  </view>
+                </view>
+                <view class="ref_input_top">
+                  <text class="ref_ipnut_nam sk-transparent sk-text-18-7500-273 sk-text">手机号码</text>
+                  <view class="rec_tal_iphone sk-image" maxlength="11" placeholder="请输入加油卡持卡人手机号" placeholder-style="color:#B1B1B1;" type="number"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="comm_box">
+            <view class="rec_tal_change_box">
+              <text class="ttle_one sk-transparent sk-text-33-7209-229 sk-text">请选择兑换面额</text>
+              <view class="change_box">
+                <view class="only_one" data-code="dd2c71da6d7f" data-denomination="100" data-index="0" data-point="10990" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-669 sk-text">100元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-165 sk-text">积分价：10990</text>
+                </view>
+                <view class="only_one" data-code="f90ed4438c58" data-denomination="200" data-index="1" data-point="21980" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-616 sk-text">200元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-345 sk-text">积分价：21980</text>
+                </view>
+                <view class="only_one" data-code="864fa6d10ac1" data-denomination="500" data-index="2" data-point="54950" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-248 sk-text">500元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-188 sk-text">积分价：54950</text>
+                </view>
+                <view class="only_one" data-code="cde20b7a36a9" data-denomination="1000" data-index="3" data-point="109900" data-sold="false" style="border: none;">
+                  <text class="sk-transparent sk-text-18-7500-755 sk-text">1000元</text>
+                  <text class="only_price sk-transparent sk-text-18-7500-662 sk-text">积分价：109900</text>
+                </view>
+              </view>
+            </view>
+            <view class="rdfCard_illustration">
+              <text class="ttle_one_w sk-transparent sk-text-36-2745-429 sk-text">兑换说明</text>
+              <text class="ttle_little sk-transparent sk-text-25-0000-225 sk-text">1. 本兑换支持全国中石油加油卡主卡兑换，中石油加油卡卡号均为16位以90开头的IC卡，兑换时请务必填写准确。</text>
+              <text class="ttle_little sk-transparent sk-text-25-0000-129 sk-text">2. 本兑换为中石油慢兑，到账时间0至48小时，急单勿拍，兑换中的订单无法退款。</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

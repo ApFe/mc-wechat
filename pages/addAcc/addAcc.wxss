@@ -1,0 +1,115 @@
+/* pages/addAcc/addAcc.wxss */
+.addAcc_box .addAcc_center{
+    height: 92rpx;
+    margin-top: 46rpx;
+}
+.addAcc_box .addAcc_center_text{
+    width: 591rpx;
+    font-size: 24rpx;
+    color: rgb(99, 99, 99);
+    height: 68rpx;
+    line-height: 68rpx;
+}
+.addAcc_box .f_res{
+    width: 674rpx;
+    font-size: 28rpx;
+    color: rgb(82, 109, 226);
+    height: 134rpx;
+    line-height: 134rpx;
+    text-align: center;
+}
+.addAcc_box .add_jf_top{
+    display: flex;
+    width: 100%;
+    height: 76rpx;
+    line-height: 76rpx;
+}
+.addAcc_box .add_jf_top .mina_t_tt{
+    font-size: 30rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    color: rgb(251, 185,68);
+}
+.addAcc_box .add_jf_top .jf_topImg{
+    width: 32rpx;
+    height: 32rpx;
+    margin: 22rpx 10rpx;
+}
+.addAcc_box .add_jf_center{
+    width: 591rpx;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.addAcc_box .acc_num{
+    display: flex;
+    flex-direction: column;
+    font-size: 32rpx;
+    line-height: 1;
+}
+.addAcc_box .acc_num_l{
+    width: 30%;
+}
+.addAcc_box .acc_num_nam{
+    margin-top: 20rpx;
+    font-size: 24rpx;
+    color: rgb(153, 153, 153);
+}
+.addAcc_box .addAcc_btn{
+    width: 130rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background: linear-gradient(to bottom right,rgb(250,159,0) ,rgb(249,202,0));
+    color: #ffffff;
+}
+.addAcc_box .addAcc_btn_bnd{
+    width: 130rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    text-align: center;
+    background: #bababa;
+    color: #ffffff;
+}
+.addAcc_box .add_acctext{
+    font-size: 29rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.addAcc_box .add_acctext_r{
+    color: rgb(104, 104, 104);
+}
+.addAcc_box .add_acctext_smg{
+    color: rgb(203,45,68);
+    width: 178rpx;
+    border-left: 2rpx solid rgb(177, 177, 177);
+    box-sizing: border-box;
+    text-align: right;
+}
+.addAcc_box .add_msg_text{
+    font-size: 28rpx;
+    color: #B1B1B1;
+    height: 102rpx;
+    line-height: 102rpx;
+}
+.addAcc_box .sub_box{
+    margin-top: 26rpx;
+}
+.no_add_msg{
+    width: 592rpx;
+    height: 36rpx;
+    margin-top: 110rpx;
+    display: flex;
+    justify-content:  flex-end;
+}
+.no_add_msg .no_msg_text{
+    height: 36rpx;
+    line-height: 36rpx;
+    font-size: 24rpx;
+    color: rgb(177, 177, 177);
+}

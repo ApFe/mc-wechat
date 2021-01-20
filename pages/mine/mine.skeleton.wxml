@@ -1,0 +1,81 @@
+<!--
+此文件为开发者工具生成，生成时间: 2020/11/16 下午4:06:51 
+使用方法：
+在 /Users/lytcitic/Desktop/wechat-mall/pages/mine/mine.wxml 引入模板
+
+```
+<import src="mine.skeleton.wxml"/>
+<template is="skeleton" wx-if="{{loading}}" />
+```
+
+在 /Users/lytcitic/Desktop/wechat-mall/pages/mine/mine.wxss 中引入样式
+```
+@import "./mine.skeleton.wxss";
+```
+
+更多详细信息可以参考文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/skeleton.html
+-->
+<template name="skeleton">
+  <view class="sk-container">
+    <view class="mine_box comm_box_height">
+      <view class="centerBox sk-image">
+        <view class="mine_top">
+          <view class="boldll">
+            <open-data class="topImg" type="userAvatarUrl"></open-data>
+          </view>
+          <open-data class="mint_t_tt" type="userNickName"></open-data>
+          <view class="mint_t_tt sk-transparent sk-text-0-0000-262 sk-text">编辑个人设置</view>
+        </view>
+        <view class="min_all_jf box_show20">
+          <view class="all_jf_top">
+            <image class="jf_topImg sk-image" mode="aspectFit"></image>
+            <view class="mina_t_tt sk-transparent sk-text-36-3636-339 sk-text">乐益通账户</view>
+          </view>
+          <view class="all_jf_center" style="border: none;">
+            <text class="jf_c_t sk-transparent sk-text-18-7500-88 sk-text" style="background-position-x: 50%;">当前积分</text>
+            <text class="jf_c_tt sk-transparent sk-text-18-7500-150 sk-text" style="background-position-x: 50%;">157277</text>
+          </view>
+          <view class="all_jf_tab">
+            <view class="jf_tab tab_l sk-transparent sk-text-17-3913-423 sk-text" style="border: none; background-position-x: 50%;">账户明细</view>
+            <view class="jf_tab tab_l sk-transparent sk-text-17-3913-314 sk-text" style="border: none; background-position-x: 50%;">积分转赠</view>
+            <view class="jf_tab tab_r sk-transparent sk-text-17-3913-738 sk-text" style="background-position-x: 50%;">积分充值</view>
+          </view>
+        </view>
+        <view class="min_sol_jf box_show20" data-index="0">
+          <view class="sol_jf_top">
+            <image class="jf_topImg sk-image" mode="aspectFit"></image>
+            <view class="mina_t_tt sk-transparent sk-text-36-3636-129 sk-text">简易积分账户</view>
+          </view>
+          <view class="sol_jf_center" style="border: none;">
+            <view class="acc_num acc_num_l">
+              <text class="acc_num_no sk-transparent sk-text-0-0000-78 sk-text">183****8561</text>
+              <text class="acc_num_nam sk-transparent sk-text-0-0000-34 sk-text">手机号</text>
+            </view>
+            <view class="acc_num acc_num_r">
+              <text class="acc_num_no sk-transparent sk-text-0-0000-1 sk-text">1积分</text>
+              <text class="acc_num_nam sk-transparent sk-text-0-0000-64 sk-text">积分余额</text>
+            </view>
+          </view>
+          <view class="sol_jf_tab"></view>
+        </view>
+        <view class="min_sol_jf box_show20" data-index="1">
+          <view class="sol_jf_top">
+            <image class="jf_topImg sk-image" mode="aspectFit"></image>
+            <view class="mina_t_tt sk-transparent sk-text-36-3636-367 sk-text">中信联名卡账户</view>
+            <view class="acc_type_box">
+              <text class="acc_type sk-transparent sk-text-20-0000-394 sk-text">支持POS机刷卡</text>
+            </view>
+          </view>
+          <view class="sol_jf_center" style="border: none;">
+            <view class="acc_num acc_num_l">
+              <text class="acc_num_no sk-transparent sk-text-0-0000-457 sk-text">6217****8844</text>
+            </view>
+            <view class="acc_num acc_num_r">
+              <text class="acc_num_no sk-transparent sk-text-0-0000-378 sk-text">155700积分</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

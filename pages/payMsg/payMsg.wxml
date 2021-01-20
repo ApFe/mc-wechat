@@ -1,0 +1,56 @@
+<!--pages/payMsg/payMsg.wxml-->
+<view class="comm_box_height pay_msg_box">
+    <view class="centerBox {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+        <view class="common_top_fix  {{windowIsBang?'common_fixedbcn90':'common_fixedbcn45'}}">兑换结果</view>
+        <view class="comm_c_b nav_padding_top90">
+            <view class="comm_box">
+                <view class="pay_msg_l_box" wx:if="{{payMsg!='FAILED'&&payMsg!='NONE'&&payMsg!='CANCELLED'}}">
+                    <image   class="pay_msg_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/sessicon.png"></image>
+                    <text class="pay_msg_text">付款成功</text>
+                    <text class="pay_msg_text_tow">感谢惠顾，发货后，</text>
+                    <text class="pay_msg_text_tow">你可以在我的订单里查看当前订单状态。</text>
+                    <view class="pay_msg_btn_box">
+                        <view class="pay_msg_shop pay_msg_shop_l" bindtap="goOrderDetail">查看订单</view>
+                        <view class="pay_msg_shop pay_msg_shop_r" bindtap="goBack">继续兑换</view>
+                    </view>
+                </view>
+                <view class="pay_msg_l_box" wx:else>
+                    <image   class="pay_msg_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/erricon.png"></image>
+                    <text class="pay_msg_text">{{payMsg=='NONE'?'未知':payMsg==' CANCELLED'?'兑换取消':'兑换失败'}}</text>
+                    <text class="pay_msg_text_tow">抱歉兑换失败了....</text>
+                    <view class="pay_msg_btn_box">
+                        <view class="pay_msg_shop pay_msg_shop_l" bindtap="goOrderDetail">查看订单</view>
+                        <view class="pay_msg_shop pay_msg_shop_r" bindtap="goBack">重新兑换</view>
+                    </view>
+                    <view class="pg_msg" wx:if="{{description=='charge'}}">
+                        <text class="ttle_one_w">失败原因：</text>
+                        <text class="ttle_little">1.非实名制号码或导致兑换失败</text>
+                        <text class="ttle_little">2.携号转网状态号码或导致兑换失败</text>
+                        <text class="ttle_little">3.联通虚拟运营商、智能网号或导致兑换失败</text>
+                        <text class="ttle_little">4.如上情况都不是，那可能是由于您的号码所在地区运营商维护所致，请稍后重新兑换</text>
+                        <text class="ttle_little">客服电话：010-59661719</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{chargeShow&&description=='charge'}}">
+        <view class="al_m_box">
+            <view class="al_beTur_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">话费兑换失败提示</text>
+                <image catchtap="closrechclose"  class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <view class="pg_msg">
+                <text class="ttle_one_w">失败原因：</text>
+                <text class="ttle_little">1.非实名制号码或导致兑换失败</text>
+                <text class="ttle_little">2.携号转网状态号码或导致兑换失败</text>
+                <text class="ttle_little">3.联通虚拟运营商、智能网号或导致兑换失败</text>
+                <text class="ttle_little">4.如上情况都不是，那可能是由于您的号码所在地区运营商维护所致，请稍后重新兑换</text>
+                <text class="ttle_little">客服电话：010-59661719</text>
+            </view>
+            <view class="comm_msg_btn comm_msg_btnTrue" catchtap="rechbeTrue">我知道了</view>
+        </view>
+    </view>
+</view>
+

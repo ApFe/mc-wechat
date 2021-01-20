@@ -1,0 +1,71 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height orderDetail_box">
+    <view class="common_top_fix color_top_fix {{windowIsBang?'common_fixed90':'common_fixed45'}}">
+        <image catchtap="backBtn"  class="img_null_login padding_left" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/back_icon.png"></image>
+        <text class="ttle_name_login">订单详情</text>
+        <text class="img_null_login padding_right"></text>
+    </view>
+    <view class="comm_box  {{windowIsBang?'mar_top162':'mar_top110'}}">
+        <view class="order_detail_top {{colorIcon}}">
+            <image class="od_topImg" mode="aspectFit" src="{{iconImg}}"></image>
+            <view class="od_t_tt_tw">{{filter.enuStatus(orderDetail.status)}}</view>
+        </view>
+        <view class="comm_box_center_o order_d_c_box" wx:if="{{filter.orderstatus('one',orderDetail.status)}}">
+            <image class="od_detailImg" lazy-load="{{true}}" mode="aspectFit" src="{{orderDetail.items[0].icon}}"></image>
+            <view class="ttle_od_box">
+                <text class="od_tex_one">{{orderDetail.items[0].title}}</text>
+                <text class="od_tex_two">{{orderDetail.items[0].point}}积分</text>
+            </view>
+            <view class="cunt_num">x1</view>
+        </view>
+        <view class="order_detail_bottom" wx:elif="{{orderDetail.status=='PAYING'}}">
+            <text class="t_red">{{hhh+'时'+mmm+'分'+sss+'秒'}}</text>后未付款，系统将自动取消订单
+        </view>
+        <view class="order_detail_bottom" wx:elif="{{filter.orderstatus('two',orderDetail.status)}}">
+            您的订单正在处理中，请稍作等待...
+        </view>
+    </view>
+    <view class="comm_box">
+        <view class="comm_box_center_o order_d_c_box border_dashed_bottom" wx:if="{{filter.orderstatus('three',orderDetail.status)}}">
+            <image class="od_detailImg" lazy-load="{{true}}" src="{{orderDetail.items[0].icon}}"></image>
+            <view class="ttle_od_box">
+                <text class="od_tex_one">{{orderDetail.items[0].title}}</text>
+                <text class="od_tex_two">{{orderDetail.items[0].point}}积分</text>
+            </view>
+            <view class="cunt_num">x1</view>
+        </view>
+        <view class="comm_list_text" wx:if="{{filter.productTypeTrue(orderDetail.productType)==1}}">
+            <text class="o_d_left">{{filter.productType(orderDetail.productType)}}</text>
+            <text class="o_d_right_one">{{orderDetail.productType=='MOBILE_CARD'?orderDetail.items[0].mobile:orderDetail.productType=='OIL_CARD'?orderDetail.items[0].oilCardNo:orderDetail.items[0].mobile}}</text>
+        </view>
+        <view class="comm_list_text" wx:if="{{filter.productTypeTrue(orderDetail.productType)==2&&orderDetail.items[0].cards[0]}}">
+            <text class="o_d_left">{{filter.productType(orderDetail.productType)}}</text>
+            <text class="o_d_right_one flex_big" data-text="{{orderDetail.items[0].cards[0].password}}" bindtap="copyText">{{orderDetail.items[0].cards[0].password}}</text>
+            <!-- <text class="o_d_right flexBox_b">复制</text> -->
+        </view>
+        <view class="comm_list_text">
+            <text class="o_d_left">支付积分</text>
+            <text class="o_d_right">{{orderDetail.items[0].point}}积分</text>
+        </view>
+        <view class="comm_list_text">
+            <text class="o_d_left">订单编号</text>
+            <text class="o_d_right" data-text="{{orderDetail.tradeNo}}" bindtap="copyText">{{orderDetail.tradeNo}}</text>
+        </view>
+        <view class="comm_list_text">
+            <text class="o_d_left">下单时间</text>
+            <text class="o_d_right">{{orderDetail.createdAt}}</text>
+        </view>
+        <view class="comm_box_bottom"></view>
+    </view>
+    <view class="btom_or_d_fix">
+        <view class="left_btom_or">{{filter.enuorStatus(orderDetail.status)}}<text class="pay_text_or">{{orderDetail.point}}积分</text></view>
+        <view class="right_btom_or">
+            <view class="fix_btn" wx:if="{{orderDetail.status=='FINISHED'||orderDetail.status=='CANCELLED'||orderDetail.status=='FAILED'}}" bindtap="deleteOrders">删除订单</view>
+            <view class="fix_btn" wx:if="{{orderDetail.status=='PAYING'}}" bindtap="cancelOrders">取消订单</view>
+            <view class="fix_btn" wx:if="{{orderDetail.status=='PAYING'}}" bindtap="goPaymentAuth">立即付款</view>
+            <view class="fix_btn" wx:if="{{orderDetail.status!='PAYING'}}" bindtap="gohome">再次购买</view>
+        </view>
+    </view>
+</view>
+

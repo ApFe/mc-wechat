@@ -1,0 +1,113 @@
+<!-- pages/integral/recharge.wxml -->
+<wxs module="filter" src="../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height integralc_box">
+    <view class="comm_box_height">
+        <view class="comm_c_b nav_padding_top120">
+            <view class="comm_box integral_card">
+                <view class="pam_top_i">
+                    <text class="top_i_text">充值券码：</text>
+                    <input type="text" class="points_code_inp" maxlength="16" bindinput="rechargecodeInput" placeholder="请输入16位充值券码" placeholder-style="color:rgb(177,177,177);"></input>
+                    <view class="top_i_texttwo" wx:if="{{0==active&&payments}}">
+                        <text>当前选择账户：{{payments[0].cardMsg}}</text>
+                        <text>积分余额：{{payments[0].balance}}积分</text>
+                    </view>
+                    <view class="top_i_texttwo" wx:else>
+                        <text>汇积分</text>
+                        <text style="margin-left:48rpx;">会生活</text>
+                    </view>
+                </view>
+            </view>
+            <view class="pont_tba comm_box">
+                <view class="btns">
+                    <view class="{{0==active?'cur com':'com'}}" data-index="0" bindtap="toggle">
+                        <view class="{{0==active?'leng_text chengeText':'leng_text'}}">充给自己</view>
+                    </view>
+                    <view style="height:56rpx;width:2rpx;background-color:#d8d8d8;margin: 12rpx 0;"></view>
+                    <view class="{{1==active?'cur com':'com'}}" data-index="1" bindtap="toggle">
+                        <view class="{{1==active?'leng_text chengeText':'leng_text'}}">充给别人</view>
+                    </view>
+                </view>
+                <view class="cons" hover-class="none" hover-stop-propagation="false">
+                    <view class="{{0==active?'cur curcom':'curcom'}}">
+                        <text class="pam_ttle">请选择充值账户</text>
+                        <radio-group class="radio-group" bindchange="radioChange">
+                            <radio class="radio" wx:for="{{payaccList.cards}}" wx:for-item='item' wx:key="name" value="{{item.type}}#{{item.balance}}#{{item.cardNo}}#{{filter.cardsType(item.type)}}#{{item.type=='WEB'?filter.numberToFixed(item.loginName,'12'):item.type=='NAME'?filter.numberToFixed(item.nameCardNo,'12'):item.type=='MINSHENG_NAME'?filter.numberToFixed(item.nameCardNo,'12'):filter.numberToFixed(item.mobile,'12')}}" checked="{{item.checked}}" color="#fbb944" wx:if="{{item.type!='WEB'}}">
+                                <view class="pam_top_iier">
+                                    <text class="top_i_texter">
+                                        {{filter.cardsType(item.type)}}{{item.type=='WEB'?filter.numberToFixed(item.loginName,'12'):item.type=='NAME'?filter.numberToFixed(item.nameCardNo,'12'):item.type=='MINSHENG_NAME'?filter.numberToFixed(item.nameCardNo,'12'):filter.numberToFixed(item.mobile,'12')}}
+                                    </text>
+                                    <text class="top_i_inter">积分余额：{{item.balance}}积分</text>
+                                </view>
+                            </radio>
+                        </radio-group>
+                    </view>
+                    <view class="{{1==active?'cur curcom':'curcom'}}">
+                        <text class="pam_ttle">请填写充值账户信息</text>
+                        <view class="comm_box_center_o" bindtap="rollin">
+                            <text class="comm_box_c_ttle">账户类型</text>
+                            <input class="comm_box_c_ttle_two" placeholder-style="color:#B1B1B1;" type="text" disabled='true' placeholder="请选择充值账户类型" placeholder-style="color:#B1B1B1;" value="{{rollinnam}}"></input>
+                            <image class="down_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/down_img.png"></image>
+                        </view>
+                        <view class="comm_box_center_o" wx:if="{{rollinaccType}}">
+                            <text class="comm_box_c_ttle">{{filter.inputTextTop(rollinaccType)}}</text>
+                            <input class="comm_box_c_ttle_two" type="{{rollinaccType=='WEB'?'text':'number'}}" bindblur="rollinAccInput" placeholder="{{filter.inputText(rollinaccType)}}" value="{{rollinaccKey}}" maxlength="{{rollinaccType=='SIMPLE'?'11':rollinaccType=='NAME'?'19':'19'}}" placeholder-style="color:#B1B1B1;" />
+                        </view>
+                        <view class="comm_box_center_o" wx:if="{{rollinaccType=='NAME'||rollinaccType=='MINSHENG_NAME'}}">
+                            <text class="comm_box_c_ttle">持卡人姓名</text>
+                            <input class="comm_box_c_ttle_two" type="text" bindblur="rollinNameInput" placeholder="请输入真实姓名" value="{{rollinaccName}}" placeholder-style="color:#B1B1B1;" />
+                        </view>
+                    </view>
+                </view>
+                <view class="comm_box_allFbtn {{rechargecodelength==16?'pamsTb_box pamsb_box':'pamsb_box'}}" bindtap="submitPam">
+                    充值
+                </view>
+                <view class="comm_box_bottom"></view>
+            </view>
+            <view class="points_explain">
+                <text class="ttle_one_w">温馨提示</text>
+                <text class="ttle_little">1. “乐益通积分充值券”（以下简称“积分券”）有对应的积分面值和充值有效期，在有效期内可充值一次；不记名，不挂失，遗失不补，过期作废。</text>
+                <text class="ttle_little">2. “积分券”使用方法：请您于充值有效期内，在本页面填写16位券码，选择积分充值账户，操作充值。</text>
+                <text class="ttle_little">3. 到账时间：积分实时到账，到账后乐益通积分，无有效期限制，长期有效。</text>
+                <text class="ttle_little">4. 乐益通积分的查询：您可通过乐益通微信公众号/小程序查询您名下各乐益通积分账户的余额和明细。</text>
+                <!-- <text class="ttle_little">5. 乐益通积分的使用：详见“帮助中心”。</text> -->
+                <text class="ttle_little">5. 客服联系方式：电话010-59231512；微信号leyitong001。</text>
+            </view>
+            <view class="kf_box" bindtap="contactSupport">
+                <image class="kf_img" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/kefuicon.png"></image>
+                <text class="kf_text">联系客服</text>
+            </view>
+        </view>
+    </view>
+    <view class="commalert_box" wx:if="{{pammsgboxshow}}">
+        <view class="al_m_box">
+            <view class="al_ms_ifbtn">
+                <text class="img_null"></text>
+                <text class="ttle_name">确认积分充值账户为</text>
+                <image catchtap="pamclosesmgsend" class="img_null" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/icon/off_img.png"></image>
+            </view>
+            <view class="msg_acc_r">
+                <view class="rechAccMsg">
+                    <text class="msg_left">{{active==0?'充值账户':'账户类型'}}</text>
+                    <text class="msg_right">{{active==0?payments[0].cardMsg:rollinnam}}</text>
+                </view>
+                <view class="rechAccMsg" wx:if="{{rollinaccType!='WEB'&&active!=0}}">
+                    <text class="msg_left">{{rollinaccType=='SIMPLE'?'手机号':'联名卡号'}}</text>
+                    <text class="msg_right">{{rollinaccKey}}</text>
+                </view>
+                <view class="rechAccMsg" wx:if="{{rollinaccType!='WEB'&&active!=0&&rollinaccType!='SIMPLE'}}">
+                    <text class="msg_left">姓名</text>
+                    <text class="msg_right">{{rollinaccName}}</text>
+                </view>
+                <view class="rechAccMsg">
+                    <text class="msg_left">充值积分</text>
+                    <text class="msg_right">{{bonuspointsfaceValue}}积分</text>
+                </view>
+            </view>
+            <view class="{{rechargecodelength!=16?'comm_msg_btn comm_msg_btnfal':'comm_msg_btn comm_msg_btnTrue'}}" catchtap="pamsendSess">
+                确认
+            </view>
+            <view class="validity">该卡有效期至：{{bonuspointsperiodofvalidity}}，请在有效期内完成充值</view>
+        </view>
+    </view>
+    <mp-actionSheet bindactiontap="btnClick" show="{{showActionsheet}}" actions="{{groups}}" title="{{chosTitle}}"></mp-actionSheet>
+</view>

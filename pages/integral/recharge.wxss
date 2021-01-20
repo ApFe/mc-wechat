@@ -1,0 +1,210 @@
+/* pages/integral/recharge.wxss */
+.integralc_box {
+  background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/integral/integral_bg.png?u=0.1) no-repeat top;
+  background-size: 100%;
+}
+
+.nav_padding_top120 {
+  padding-top: 120rpx;
+}
+
+.points_explain {
+  width: 600rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.msg_acc_r {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280rpx;
+}
+
+.rechAccMsg {
+  border: none;
+  width: 513rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.msg_left {
+  color: rgb(104, 104, 104);
+}
+
+.msg_right {
+  color: rgb(82, 109, 226);
+}
+
+.pont_tba .btns {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  font-size: 32rpx;
+}
+
+.pont_tba .btns .com {
+  flex: 1;
+  text-align: center;
+  line-height: 80rpx;
+  color: rgb(104, 104, 104);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leng_text {
+  height: 80rpx;
+  width: 50%;
+  line-height: 80rpx;
+}
+
+.chengeText {
+  border-bottom: 4rpx solid #faa200;
+  box-sizing: border-box;
+}
+
+.curcom {
+  min-height: 40rpx;
+  display: none;
+}
+
+.cur {
+  display: block;
+}
+
+.pont_tba .cons {
+  margin-top: 26rpx;
+}
+
+.pont_tba .btns .cur {
+  color: #faa200;
+}
+
+.pont_tba .btns .border_r {
+  border-right: 2rpx solid #d8d8d8;
+  box-sizing: border-box;
+}
+
+.points_explain .ttle_one_w {
+  width: 592rpx;
+  font-size: 28rpx;
+  color: rgb(104, 104, 104);
+  height: 102rpx;
+  line-height: 102rpx;
+}
+
+.points_explain .ttle_little {
+  width: 592rpx;
+  font-size: 24rpx;
+  line-height: 2;
+  color: rgb(104, 104, 104);
+  text-align: justify;
+  text-justify: distribute-all-lines;
+}
+
+.integralc_box .pam_top_i {
+  width: 592rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.integral_card {
+  min-height: 301rpx;
+  background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/integral/integral_card.png) no-repeat;
+  background-size: 100% 100%;
+}
+
+.integralc_box .points_code_inp {
+  font-size: 30rpx;
+  width: 506rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  border-radius: 20rpx;
+  padding: 0 42rpx;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 30rpx;
+}
+
+.integralc_box .top_i_text {
+  font-size: 30rpx;
+  line-height: 3.1;
+  color: rgb(255, 255, 255);
+}
+
+.integralc_box .top_i_texttwo {
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  line-height: 2;
+  color: rgb(255, 255, 255);
+}
+
+.integralc_box .top_i_int {
+  font-size: 38rpx;
+  line-height: 3.6;
+  color: rgb(82, 109, 226);
+}
+
+.integralc_box .pam_ttle {
+  width: 592rpx;
+  font-size: 24rpx;
+  line-height: 1;
+  color: rgb(104, 104, 104);
+  margin-bottom: 10rpx;
+}
+
+.integralc_box .pam_top_ii {
+  width: 592rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-bottom: 2rpx dashed rgb(216, 216, 216);
+  padding: 20rpx 0;
+}
+
+.integralc_box .pam_top_iier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20rpx 0;
+  margin-left: 58rpx;
+}
+
+.integralc_box .radio {
+  width: 592rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 2rpx dashed rgb(216, 216, 216);
+}
+
+.integralc_box .top_i_texter {
+  font-size: 28rpx;
+  line-height: 2;
+  color: rgb(104, 104, 104);
+}
+
+.integralc_box .top_i_inter {
+  font-size: 20rpx;
+  line-height: 2;
+  color: rgb(82, 109, 226);
+}
+
+.integralc_box .pamsb_box {
+  margin-top: 146rpx;
+}
+
+.validity {
+  color: #d7000f;
+  font-size: 20rpx;
+  line-height: 2;
+  padding-bottom: 36rpx;
+}

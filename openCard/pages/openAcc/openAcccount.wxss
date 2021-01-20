@@ -1,0 +1,57 @@
+/* openCard/pages/openAcc/openAcccount.wxss */
+.cmbc_center{
+    width: 592rpx;
+    height: 104rpx;
+}
+.cmbc_center_b{
+    width: 614rpx;
+    height: 80rpx;
+    justify-content: space-between;
+    padding-bottom: 14rpx;
+}
+.cmbc_setp_text{
+    width: 131rpx;
+    font-size: 18rpx;
+    color: rgb(251,185,68);
+    text-align: center;
+}
+.camera_img{
+    width: 62rpx;
+    height: 62rpx;
+}
+.camera_box{
+    color: #b1b1b1;
+    font-size: 28rpx;
+    flex: 1;
+}
+.cmbc_box .add_acctext{
+    font-size: 29rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cmbc_box .add_acctext_r{
+    color: rgb(104, 104, 104);
+}
+.cmbc_box .add_msg_text{
+    font-size: 28rpx;
+    color: #B1B1B1;
+    height: 102rpx;
+    line-height: 102rpx;
+}
+.cmbc_redio checkbox .wx-checkbox-input{
+    width: 25rpx;
+    height: 25rpx;
+    border-radius: 50%;
+}
+.cmbc_redio checkbox .wx-checkbox-input.wx-radio-input-checked::before {
+    width: 18rpx;
+    height: 18rpx;
+    line-height: 18rpx;
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}

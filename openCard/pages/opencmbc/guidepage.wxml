@@ -1,0 +1,12 @@
+<!--openCard/pages/opencmbc/guidepage.wxml-->
+<view class="comm_box_height">
+    <view class="comm_two_centerBox">
+        <view class="guide_img_box" wx:for="{{guideImg}}">
+            <image class="guide_img" src="{{item.img}}"  lazy-load="{{true}}"  mode="widthFix"></image>
+        </view>
+        
+        <view class="go_open" bindtap="goOpenCmbc">
+            立即办理
+        </view>
+    </view>
+</view>

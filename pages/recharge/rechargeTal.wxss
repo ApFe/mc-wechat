@@ -1,0 +1,117 @@
+/* pages/recharge/rechargeTal.wxss */
+.rec_tal_box .rec_tal_box_two{
+    background: url(https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/rechargetal_icon.png) no-repeat 0 -100rpx;
+    background-size: 100%;
+}
+.rec_tal_box .talImg{
+    width: 288rpx;
+    height: 176rpx;
+    margin-right: 128rpx;
+}
+.rec_tal_box .tal_box{
+    width: 592rpx;
+    display: flex;
+    align-items: center;
+}
+.rec_tal_box .tal_box .rec_tal_del{
+    font-size: 30rpx;
+    background-color: #d1d1d1;
+    height: 48rpx;
+    line-height: 48rpx;
+    text-align: center;
+    width: 48rpx;
+    color: #ffffff;
+    border-radius: 50%;
+}
+.rec_tal_box .rec_tal_iphone{
+    flex: 1;
+    height: 108rpx;
+    font-size: 48rpx;
+    color: #686868;
+}
+.rec_tal_box .rec_tal_change_box{
+    width: 600rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rec_tal_box .rec_tal_change_box .ttle_one{
+    width: 592rpx;
+    font-size: 28rpx;
+    border-top: 2rpx dashed rgb(216, 216, 216);
+    color: rgb(104, 104, 104);
+    height: 86rpx;
+    line-height: 86rpx;
+    padding-top: 14rpx;
+}
+.rec_tal_box .rec_tal_change_box .ttle_one_w{
+    width: 592rpx;
+    font-size: 28rpx;
+    color: rgb(104, 104, 104);
+    height: 102rpx;
+    line-height: 102rpx;
+}
+.rec_tal_box .change_box{
+    display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+    /* justify-content: space-between; */
+}
+.rec_tal_box .only_one{
+    width: 188rpx;
+    height: 125rpx;
+    font-size: 38rpx;
+    color: rgb(159,159,159);
+    margin: 6rpx;
+    border: 3rpx solid rgb(159,159,159);
+    box-sizing: border-box;
+    border-radius: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rec_tal_box .ttle_little{
+    width: 592rpx;   
+    font-size: 24rpx;
+    line-height: 2;
+    color: rgb(104, 104, 104);
+	text-align:justify;
+	text-justify:distribute-all-lines; 
+}
+.rec_tal_box .chose_only{
+    background-color: #f9ca00;
+    border: 2rpx solid #f9ca00;
+    color: #ffffff;
+}
+.rec_tal_box .only_price{
+    font-size: 22rpx;
+}
+.rec_tal_box .kf_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44rpx;
+    margin-bottom: 28rpx;
+}
+.rec_tal_box .kf_img{
+    width: 38rpx;
+    height: 34rpx;
+    margin-right: 7rpx;
+}
+.rec_tal_box .kf_text{
+    font-size: 24rpx;
+    color: #f9ca00;
+}
+.rec_tal_box .right_s{
+    color: #526de2;
+}
+.rec_tal_box .al_m_b_title{
+    margin-bottom: 26rpx;
+    margin-top: 38rpx;
+}
+.rec_tal_box .btm_re_btn{
+    margin-top: 76rpx;
+    margin-bottom: 49rpx;
+}

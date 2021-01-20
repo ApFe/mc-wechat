@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="centerBox home_box {{windowIsBang?'nav_padding_top142':'nav_padding_top90'}}">
+    <view class="swiper-container">
+      <swiper class="swiper1" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+        <swiper-item wx:for="{{banners}}" wx:key="id">
+          <image  mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.linkUrl}}" />
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="tabBox">
+      <view class="tabBoxone">
+        <image class="tabImg01" bindtap="goRechargeTal" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/banner/tab01@3x.png"></image>
+        <image class="tabImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/banner/tab04@3x.png"></image>
+      </view>
+      <view class="tabBoxone">
+        <image class="tabImg" bindtap="goGoodsList" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/banner/tab02@3x.png"></image>
+        <image class="tabImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/banner/tab03@3x.png"></image>
+        <image class="tabImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/banner/tab05@3x.png"></image>
+      </view>
+    </view>
+    <view class="secKillBox">
+      <image class="secKillImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/other/seckillBox@3x.png"></image>
+    </view>
+    <view class="swiperB_box"> 
+      <view class="titleText">
+        热门活动
+      </view>
+      <view class="swiper-container swiperBoxt">
+        <swiper class="swipertow" next-margin="170rpx" current-item-id="{{currentItemId}}" previous-margin="170rpx" bindchange="swiperChange" circular>  
+          <block wx:for="{{bannerTwo}}" wx:key="index">
+            <swiper-item  class="swiperItem"  item-id="{{index}}" data-item-id="{{index}}" bindtap='clickChange'>  
+            <view class='box_img_o'>
+              <view class='box_img_t  {{currentItemId == index ? "selected" : ""}}' >
+                <image  mode="aspectFill" bindtap="tapBanner" data-url="{{item.linkUrl}}" src="{{item.linkUrl}}" />
+              </view>
+            </view> 
+            </swiper-item>  
+            </block>
+        </swiper> 
+      </view>
+    </view>
+    <view class="recommendB_box"> 
+      <view class="titleText">
+        商品推荐
+      </view>
+      <view  class="recommendList">
+        <view class="re_detail" bindtap="goGoodsDetail">
+          <image class="re_detailImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/reImg/11@3x.png"></image>
+          <view class="ttle_re_box">
+            <text class="tex_one">优酷VIP会员卡</text>
+            <text class="tex_two02 textup">已售罄</text>
+          </view>
+          <view>
+            <image class="exchangeImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/reImg/exchange01@3x.png"></image>
+          </view>
+        </view>
+        <view class="re_detail">
+          <image class="re_detailImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/reImg/12@3x.png"></image>
+          <view class="ttle_re_box">
+            <text class="tex_one">优酷VIP会员卡</text>
+            <text class="tex_two02 texton">1000积分</text>
+          </view>
+          <view>
+            <image class="exchangeImg" src="https://ecashback.oss-cn-beijing.aliyuncs.com/xcx/images/reImg/exchange01@3x.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

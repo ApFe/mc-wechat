@@ -1,0 +1,39 @@
+<!--wallet/pages/walletrecharge/rechargeCmbc.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
+<view class="comm_box_height">
+    <view class="comm_two_centerBox">
+        <view class="comm_c_b">
+            <view class="comm_box cmbcrecharge">
+                <!-- <view class="comm_box_bottom30"></view> -->
+                <view class="comm_box_center_cbo">
+                    <text class="comm_box_c_ttle">{{rechargeOrwithdrawcash=='recharge'?'充值账户':'到账账户'}}</text>
+                    <text class="comm_box_c_ttle_two"></text>
+                </view>
+                <view class="comm_box_center_o">
+                    <text class="comm_box_c_ttle_two" wx:if="{{rechargeOrwithdrawcash=='withdrawcash'}}">{{cmbcAcc.bindBankName}}{{filter.numberToFixed(cmbcAcc.bindCardNo,'12')}}</text>
+                    <text class="comm_box_c_ttle_two" wx:else>民生银行{{filter.numberToFixed(cmbcAcc.cardNo,'12')}}</text>
+                    <text class="comm_box_c_ttle"></text>
+                </view>
+                <view class="comm_box_bottom dim_ttle_t">充值、提现仅支持已绑定的主卡作出账入账</view>
+                <!-- <view class="comm_box_bottom30"></view> -->
+            </view>
+        </view>
+        <view class="comm_c_b">
+            <view class="comm_box cmbcrecharge">
+                <view class="comm_box_center_cbo">
+                    <text class="comm_box_c_ttle">{{rechargeOrwithdrawcash=='recharge'?'充值金额':'提现金额'}}</text>
+                    <text class="comm_box_c_ttle_two"></text>
+                </view>
+                <view class="comm_box_center_o">
+                    <text class="comm_box_c_ttle" style="min-width:10rpx;">¥</text>
+                    <input class="comm_box_c_ttle_two" type="digit" bindinput="rechargeCmbcInput" placeholder="{{rechargeOrwithdrawcash=='recharge'?'请输入充值金额':'请输入提现金额'}}" placeholder-style="color:#B1B1B1;" />
+                </view>
+                <view class="comm_box_bottom dim_ttle_t" wx:if="{{rechargeOrwithdrawcash=='recharge'}}">充值最大限额以银行自身限额为准</view>
+                <view class="comm_box_bottom dim_ttle_t" wx:else>每次提现不得超过50000，每天不限次数</view>
+                <view class="comm_box_bottom"></view>
+                <view class="comm_box_allbtn sub_box {{rechargeCmbcTrue?'comm_msg_btnTrue':'comm_msg_btnfal'}}" data-type='{{rechargeOrwithdrawcash}}' bindtap="rechargeCmbc">{{rechargeOrwithdrawcash=='recharge'?'充值':'提现'}}</view>
+                <view class="comm_box_bottom"></view>
+            </view>
+        </view>
+    </view>
+</view>
