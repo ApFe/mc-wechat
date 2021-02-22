@@ -1,0 +1,19 @@
+<!--openCard/pages/opencmbcp/individualtaxationcmbc.wxml-->
+<view class="lytprotocol">
+    <view class="ttle_one_w">1、个人税收居民身份声明文件</view>
+    <text class="ttle_little">姓名：</text>
+    <text class="ttle_little">开户证件类型：居民身份证</text>
+    <text class="ttle_little">证件号码：</text>
+    <text class="ttle_little">税收居民身份证明：仅为中国税收居民</text>
+    <view class="ttle_one_w">2、基本信息：</view>
+    <text class="ttle_little">姓名：</text>
+    <text class="ttle_little">现居地址（英文或拼音）：</text>
+    <text class="ttle_little">出生日期：</text>
+    <text class="ttle_little">出生国家：中国</text>
+    <view class="ttle_one_w">3、税收居民国（地区）及纳税人识别号：</view>
+    <view class="ttle_one_w">4、声明和签署</view>
+    <view class="ttle_one_w1">本人确认上述信息的真实、准确和完整，且当这些信息发生变更时，将在30日内通知中国民生银行，否则，本人承担由此造成的不利后果。</view>
+    <view class="ttle_one_w1">本人签署：</view>
+    <view class="ttle_one_w1">审核经办：</view>
+    <view class="comm_box_bottom"></view>
+</view>

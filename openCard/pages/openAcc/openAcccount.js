@@ -76,8 +76,10 @@ Page({
     });
   },
   cmbcprotocol_cmbc:function(e){
+    console.log('cmbcprotocol_cmbc===',e)
+    let opt = e.target.dataset.pto
     wx.navigateTo({
-      url: '/openCard/pages/opencmbcp/openportocolcmbc',
+      url: '/openCard/pages/opencmbcp/'+opt,
       success: (result)=>{
         
       },

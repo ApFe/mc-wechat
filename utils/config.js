@@ -63,7 +63,7 @@ const baseApihost = {
   // 开发版
   develop: apithisLocality,//apithisLocality
   // 体验版
-  trial: apiformal,//apitesting
+  trial: apitesting,//apitesting
   // 正式版
   release: apiformal
 };
@@ -71,7 +71,7 @@ const baseApihostsso = {
   // 开发版
   develop: ssothisLocality,//ssothisLocality
   // 体验版
-  trial: ssoformal,//ssotesting
+  trial: ssotesting,//ssotesting
   // 正式版
   release: ssoformal
 };
@@ -79,7 +79,7 @@ const baseApihostpwd = {
   // 开发版
   develop: pwdthisLocality,//pwdthisLocality
   // 体验版
-  trial: pwdformal,//pwdtesting
+  trial: pwdtesting,//pwdtesting
   // 正式版
   release: pwdformal
 };

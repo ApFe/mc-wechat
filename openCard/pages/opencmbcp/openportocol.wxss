@@ -7,9 +7,18 @@
 .lytprotocol .ttle_one_w {
     width: 90%;
     font-size: 28rpx;
-    color: rgb(104, 104, 104);
+    color: rgb(83, 81, 81);
     line-height: 102rpx;
 }  
+.lytprotocol .ttle_one_w1{
+    width: 90%;
+    font-size: 28rpx;
+    text-indent:56rpx;
+    color: rgb(15, 15, 15);
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: distribute-all-lines;
+}
 .lytprotocol .ttle_one_w2{
     display: flex;
     flex-direction: column;

@@ -1,0 +1,35 @@
+<!--openCard/pages/opencmbcp/cross-linetrafficcmbc.wxml-->
+<view class="lytprotocol">
+    <view class="ttle_one_w">甲方：客户(个人)</view>
+    <view class="ttle_one_w">乙方：中国民生银行股份有限公司</view>
+    <text class="ttle_little">1、定义： </text>
+    <view class="ttle_one_w2">
+        <text class="ttle_little">中国民生银行股份有限公司（下称“乙方”）“跨行通”业务是指利用乙方资金结算系统与第三方机构跨行网上批量代扣系统，将甲方本人在他行开立的人民币结算账户中的资金，代扣至其开立在乙方的结算账户中。“跨行通”扣款可由甲方本人实时发起， 也可授权乙方通过“跨行通”系统发起代扣款指令，实现甲方资金转入。</text>
+        
+    </view>
+    <text class="ttle_little">2、交易安排 </text>
+    <view class="ttle_one_w2">
+        <text class="ttle_little">2.1 甲方应确保付款账户号、手机号等为本人所有。 也可授权乙方通过“跨行通”系统发起代扣款指令，实现甲方资金转入。</text>
+        <text class="ttle_little">2.2 签约成功的甲方，可通过乙方网上银行、手机银行系统、直销银行系统及乙方不时开通的其他系统通过“跨行通”业务将他行卡账户资金转入到甲方本人民生账户中。</text>
+        <text class="ttle_little">2.3 因甲方提供的付款账户信息验证不成功、付款账户余额不足等原因导致的扣款失败，所产生的后果由甲方承担。</text>
+        
+    </view>
+    <text class="ttle_little">收款账户信息：</text>
+    <text class="ttle_little">账户名称：</text>
+    <text class="ttle_little">账号：</text>
+    <text class="ttle_little">付款账户信息：</text>
+    <text class="ttle_little">开户行：</text>
+    <text class="ttle_little">账户名称：</text>
+    <text class="ttle_little">手机号：</text>
+    <text class="ttle_little">身份证号码：</text>
+    <text class="ttle_little">签约时间：</text>
+    <view class="ttle_one_w">甲方确认如下信息：</view>
+    <text class="ttle_little">1、因第三方跨行代扣系统故障，付款账户开户行调整扣款规则或未及时向代扣第三方机构及时传送扣款信息等乙方无法控制的情况，导致扣款失败或扣款资金延时入账的与乙方无关。</text>
+    <text class="ttle_little">2、甲方如发现扣款有误，应在3个工作日内通知乙方更正。</text>
+    <text class="ttle_little">3、因付款账户信息验证不成功、付款账户余额不足、设有扣款限额等原因导致的扣款失败，产生的后果由本人承担。</text>
+    <text class="ttle_little">4、“跨行通”扣款指令一经乙方在授权下发出，即为不可撤销。</text>
+    <view class="ttle_one_w1">本协议经甲方在乙方网上银行、手机银行、直销银行及其他乙方不时开通的其他系统勾选同意跨行通协议，并经乙方网上银行、手机银行、直销银行及其他乙方不时开通的其他系统确认“签约成功”后成立并生效。除非依照法律规定或双方约定终止，否则本协议持续有效。乙方有权变更本业务规则，该等变更将以公告方式在乙方网站、手机银行、直销银行等渠道发布，甲方在公告后继续使用“跨行通”业务的，视为接受该变更。</view>
+    <view class="ttle_one_w1">若在本协议生效前或后甲方与乙方就本协议下业务另行通过柜台或乙方网上银行订立协议的，则该协议与本协议不一致之处以生效时间在后者为准，双方另有约定的除外。</view>
+    
+    <view class="comm_box_bottom"></view>
+</view>

@@ -46,6 +46,8 @@
         "pages/openAcc/openAcccount",
         "pages/opencmbcp/openportocol",
         "pages/opencmbcp/openportocolcmbc",
+        "pages/opencmbcp/cross-linetrafficcmbc",
+        "pages/opencmbcp/individualtaxationcmbc",
         "pages/openAccResult/openAccResult",
         "pages/openAccFrom/openAccFrom",
         "pages/controlBox/controlBox",

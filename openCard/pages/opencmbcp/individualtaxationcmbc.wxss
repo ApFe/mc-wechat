@@ -1,4 +1,4 @@
-/* pages/start/lytprotocol.wxss */
+/* openCard/pages/opencmbcp/individualtaxationcmbc.wxss */
 .lytprotocol{
     display: flex;
     flex-direction: column;
@@ -36,4 +36,3 @@
     text-justify: distribute-all-lines;
 
 }
-    

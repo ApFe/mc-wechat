@@ -86,7 +86,11 @@
                             已阅读并同意<text class="agreement_text" catchtap="cmbcprotocol">《中国民生银行个人人民币银行结算账户管理协议》</text>
                         </view>
                         <view class="agreement_t">
-                            <text class="agreement_text"  catchtap="cmbcprotocol_cmbc">《账户信息即时通服务协议》</text>
+                            <text class="agreement_text" data-pto='openportocolcmbc'  catchtap="cmbcprotocol_cmbc">《账户信息即时通服务协议》</text>
+                            <text class="agreement_text"  data-pto='cross-linetrafficcmbc'  catchtap="cmbcprotocol_cmbc">《中国民生银行“跨行通”业务协议》</text>
+                        </view>
+                        <view class="agreement_t">
+                            <text class="agreement_text" data-pto='individualtaxationcmbc'  catchtap="cmbcprotocol_cmbc">《个人税收居民身份声明文件》</text>
                         </view>
                     </checkbox >
                 </checkbox-group>

@@ -1,4 +1,4 @@
-/* pages/start/lytprotocol.wxss */
+/* openCard/pages/opencmbcp/cross-linetrafficcmbc.wxss */
 .lytprotocol{
     display: flex;
     flex-direction: column;
