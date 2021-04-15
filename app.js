@@ -649,7 +649,7 @@ App({
       let error = res.data.error
       let mesge = res.data.message ? res.data.message : '请联系客服'
       let errText
-      errText = errors ? errors[Object.keys(errors)[0]] : error ? mesge : '请联系客服' + statusCode
+      errText = errors && code!=401 ? errors[Object.keys(errors)[0]] : error ? mesge : '请联系客服' + statusCode
       throw errText
     } catch (err) {
       setTimeout(() => {

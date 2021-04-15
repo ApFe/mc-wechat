@@ -1,11 +1,16 @@
 // wallet/pages/walletrecharge/resultCmbc.js
+var app =  getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cmbcAcc:''
+  },
+  strTime:function(t){
+    let timeStr = t.replace(/T/g," ")
+    return timeStr
   },
   gowalletIndex:function(e){
     wx.navigateBack({
@@ -48,7 +53,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let that = this
+    app.getaccountsdetail().then(res => {
+      console.log('getaccountsdetail',res)
+      wx.hideLoading()
+      if(res.statusCode!=200){
+        getApp().status_code(res)
+      }else{
+        that.setData({
+          cmbcAcc:res.data
+        })
+      }
+    })
   },
 
   /**

@@ -1,4 +1,5 @@
 <!--wallet/pages/walletrecharge/resultCmbc.wxml-->
+<wxs module="filter" src="../../../utils/numbertofix.wxs"></wxs>
 <view class="comm_box_height cmbc_result_box">
     <view class="comm_two_centerBox">
         <view class="comm_c_b">
@@ -17,7 +18,9 @@
                 <view class="comm_box">
                     <view class="comm_list_text tran_mboxtop">
                         <text class="trans_one_text">{{bankUrl=='recharge'?'充值账户':'提现账户'}}</text>
-                        <text class="trans_two_text">{{bankUrl=='recharge'?'民生银行':'其他银行'}}</text>
+                        
+                        <text class="trans_two_text" wx:if="{{bankUrl=='recharge'}}">民生银行</text>
+                        <text class="trans_two_text" wx:else>{{cmbcAcc.bindBankName}}{{filter.numberToFixed(cmbcAcc.bindCardNo,'12')}}</text>
                     </view>
                     <view class="comm_list_text">
                         <text class="trans_one_text">{{bankUrl=='recharge'?'充值金额':'提现金额'}}</text>

@@ -30,10 +30,10 @@
                 </view>
                 <view class="comm_box_bottom"></view>
                 <view class="remaining_sum_btn">
-                    <!-- <view class="res_btn r_btn_l" data-type='recharge' bindtap='rechargeOrwithdrawcashCmbc'>
+                    <view class="res_btn r_btn_l" data-type='recharge' bindtap='rechargeOrwithdrawcashCmbc'>
                         充值
                     </view>
-                    <text class="kong_box"></text> -->
+                    <text class="kong_box"></text>
                     <view class="res_btn r_btn_r"  data-type='withdrawcash' bindtap='rechargeOrwithdrawcashCmbc'>
                       提现
                     </view>

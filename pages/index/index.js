@@ -273,7 +273,7 @@ Page({
         let transactionNo = wx.getStorageSync('transactionNo');
         let storageObj = wx.getStorageSync('storageObj');
         if (transactionNo) {
-          storageObj && (goUrl = '/openCard/pages/openAcc/openAcccount')
+          storageObj && (goUrl = '/openCard/pages/opencmbc/guidepage')
           storageObj || (goUrl = '/openCard/pages/openAccResult/openAccResult')
         }
         if (res.statusCode != 200 && cmbcqualification) {
